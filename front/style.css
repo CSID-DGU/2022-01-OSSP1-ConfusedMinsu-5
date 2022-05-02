@@ -1,0 +1,13 @@
+.schedule_list{
+    width:500px;
+    border-radius: 10px;
+}
+
+#image_map:hover{
+    background-color: blue;
+}
+
+.library:hover{
+    background-color: blue;
+    color:blue;
+}
