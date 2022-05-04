@@ -31,16 +31,16 @@
     position:relative;
     top:-700px;
     left:200px;
-    clip-path:polygon(40% 40%, 55% 40%, 80% 10%, 100% 15%,85% 70%, 60% 85%,30% 75%, 25% 50%);
+    clip-path:polygon(40% 40%, 55% 40%, 80% 10%, 100% 15%,100% 30%,85% 50%,85% 70%, 60% 85%,30% 75%, 25% 50%);
     width:200px;
     height:200px;
-    background-color: rgba(0,120,200,0.7);
+    background-color: ;
     display:block;
     
 }
 #new_tech_cover:hover{
     display:block;
-    background-color: rgba(0,120,200,0.7);
+    background-color: rgba(0,200,120,0.7);
 }
 
 .library_div{
