@@ -19,6 +19,6 @@
 
 * BUILDING Entity: 강의동 entity로 건물명을 primary key로 갖는다.
 
-- - -
- Relationship between SCHEDULED_LECTURE and TIME_LECTURE -> one to many
- Relationship between SCHEDULED_LECTURE and BUILDING -> many to one
+Relationship between SCHEDULED_LECTURE and TIME_LECTURE -> one to many
+
+Relationship between SCHEDULED_LECTURE and BUILDING -> many to one
