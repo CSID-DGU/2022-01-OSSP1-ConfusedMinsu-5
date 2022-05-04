@@ -26,6 +26,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+	implementation 'mysql:mysql-connector-java'
 }
 
 tasks.named('test') {
