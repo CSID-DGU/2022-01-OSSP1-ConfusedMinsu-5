@@ -1,0 +1,50 @@
+.schedule_list {
+    width: 500px;
+    border-radius: 10px;
+}
+
+#image_map:hover {
+    background-color: blue;
+}
+
+.library:hover {
+    background-color: blue;
+    color: blue;
+}
+#library_cover {
+    position: relative;
+    top: -500px;
+    left: 360px;
+    clip-path: polygon(40% 0%, 110% 10%, 75% 75%, 60% 100%, 30% 85%, 10% 50%, 10% 40%, 15% 20%);
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0, 120, 200, 0.7);
+    display: block;
+}
+#library_cover:hover {
+    display: block;
+    background-color: rgba(0, 120, 200, 0.7);
+}
+
+#new_tech_cover {
+    position: relative;
+    top: -700px;
+    left: 200px;
+    clip-path: polygon(40% 40%, 55% 40%, 80% 10%, 100% 15%, 100% 30%, 85% 50%, 85% 70%, 60% 85%, 30% 75%, 25% 50%);
+    width: 200px;
+    height: 200px;
+    background-color: ;
+    display: block;
+}
+#new_tech_cover:hover {
+    display: block;
+    background-color: rgba(0, 200, 120, 0.7);
+}
+
+.library_div {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    background: rgba(200, 150, 150);
+}
