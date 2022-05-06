@@ -22,3 +22,10 @@
 Relationship between SCHEDULED_LECTURE and TIME_LECTURE -> one to many
 
 Relationship between SCHEDULED_LECTURE and BUILDING -> many to one
+
+
+### origin/master와 master의 의미
+* master(or main): 처음 branch 만들어졌을 때 default 이름
+* origin: romote 저장소 (-> github에서 사용하는 저장소)
+* origin/master: remote 저장소가 master branch를 가리킨다.
+* HEAD: branch를 가리키는 포인터. 현재 내가 어떤 작업공간에 있는지를 나타낸다.
