@@ -1,4 +1,4 @@
-package com.project.mong.controller;
+/*package com.project.mong.controller;
 
 import com.project.mong.dto.TestDTO;
 import com.project.mong.dao.TestDAO;
@@ -21,3 +21,4 @@ public class DBConnectTestCtrl {
         return testDAO.getTestData();
     }
 }
+*/

@@ -3,9 +3,8 @@
 <mapper namespace="com.project.mong.dao.TestDAO">
     <select id="getTestData" resultType="com.project.mong.dto.TestDTO">
         select
-            title
-            myname
+            *
         from
-            DB_TEST
+            DB_TEST;
     </select>
 </mapper>

@@ -1,4 +1,4 @@
-package com.project.mong.config;
+/*package com.project.mong.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -29,3 +29,4 @@ public class MySQLConfig {
         return sessionFactory.getObject();
     }
 }
+*/
