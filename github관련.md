@@ -27,11 +27,14 @@ git init은 원래 있던 파일에 github 연결
 7. git checkout master  
 마스터 브랜치로 돌아오기
 
-8. git branch -d 삭제할브랜치이름  
-merge한 브랜치 삭제
  
-9. git pull  
+8. git pull  
 적용된 파일 업로드  
+
+9. git branch -d 삭제할브랜치이름  
+merge한 브랜치 삭제
+**중요! master에서 git pull을 한 뒤 local의 branch를 삭제해야한다.
+
 ->2번으로 돌아가서 무한반복  
 브랜치를 생성하고 merge 한 뒤 삭제하는 것이 좋다!  
 
