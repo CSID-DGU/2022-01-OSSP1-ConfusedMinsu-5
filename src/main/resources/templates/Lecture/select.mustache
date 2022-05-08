@@ -1,0 +1,18 @@
+{{>layout/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Lname</th>
+        <th scope="col">Mname</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#lecturelist}}
+        <tr>
+            <th>{{lname}}</th>
+            <td>{{mname}}</td>
+        </tr>
+    {{/lecturelist}}
+    </tbody>
+</table>
+{{>layout/footer}}

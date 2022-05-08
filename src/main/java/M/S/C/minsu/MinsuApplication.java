@@ -13,18 +13,7 @@ import java.util.Map;
 public class MinsuApplication {
 
 	public static void main(String[] args) {
-		try (ConfigurableApplicationContext ctx =SpringApplication.run(MinsuApplication.class, args)){
-			MinsuApplication m = ctx.getBean(MinsuApplication.class);
-			m.method();
-		}
-	}
-
-	@Autowired
-	private JdbcTemplate jdbc;
-
-	public void method() {
-		List<Map<String, Object>> list = this.jdbc.queryForList("SELECT * FROM LECTURE");
-		list.forEach(System.out::println);
+		SpringApplication.run(MinsuApplication.class, args);
 	}
 
 }

@@ -1,0 +1,17 @@
+{{>layout/header}}
+
+<form class="container" action="/Lecture/select" method="post"> <!-- post로 action -->
+    <div class="mb-3">
+        <label class="form-label">학과</label>
+        <!-- 입력값: title -->
+        <input type="text" class="form-control" name="major">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">이름</label>
+        <!-- 입력값: content -->
+        <textarea class="form-control" rows="3" name="name"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{{>layout/footer}}
