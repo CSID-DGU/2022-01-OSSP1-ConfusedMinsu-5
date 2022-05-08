@@ -32,3 +32,9 @@ Relationship between SCHEDULED_LECTURE and BUILDING -> many to one
 -   origin: romote 저장소 (-> github에서 사용하는 저장소)
 -   origin/master: remote 저장소가 master branch를 가리킨다.
 -   HEAD: branch를 가리키는 포인터. 현재 내가 어떤 작업공간에 있는지를 나타낸다.
+
+
+### React 실행
+- Spring Boot 실행
+- react project가 설치된 파일 (\react\test_react)에서 npm start 명령어 입력.
+(Spring Boot 실행 안하고 react 실행 시 Proxy error 발생)
