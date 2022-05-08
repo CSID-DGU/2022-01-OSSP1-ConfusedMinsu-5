@@ -2,9 +2,10 @@ package M.S.C.minsu.dto;
 
 import lombok.Getter;
 
+@Getter
 public class LectureDTO {
 
-    @Getter
+
     String Lname;
     String Mname;
     Integer Semester;

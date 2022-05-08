@@ -1,10 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우끼끼</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+    />
+    <link href="style.css" rel="text/css" />
 </head>
+<style>
+    .list {
+        width: 200px;
+        border-radius: 5px;
+        background-color: lightgray;
+        text-align: center;
+    }
+    .list:hover {
+        background-color: gray;
+    }
+</style>
 <body>
-  hi
+<div style="background-color: orange">
+    <p class="h1 p-3 text-center mb-0"><b>우끼끼</b></p>
+</div>
+
+<ul class="nav nav-tabs p-1 mb-5" style="background-color: lightgray">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">스케줄 가이드</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">학업이수 가이드</a></li>
+            <li><a class="dropdown-item" href="scheduleGuide.html">시간표 가이드</a></li>
+            <li><a class="dropdown-item" href="emptyGuide.html">공강 가이드</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">공과대학</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">공과대학</a></li>
+            <li><a class="dropdown-item" href="#">사회과학대학</a></li>
+            <li><a class="dropdown-item" href="#">경영대학</a></li>
+            <li><a class="dropdown-item" href="#">문과대학</a></li>
+            <li><a class="dropdown-item" href="#">법과대학</a></li>
+        </ul>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">컴퓨터공학과</a>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">컴퓨터공학과</a></li>
+            <li><a class="dropdown-item" href="#">정보통신공학과</a></li>
+            <li><a class="dropdown-item" href="#">멀티미디어공학과</a></li>
+        </ul>
+    </li>
+</ul>
+
+<div class="row justify-content-center">
+    <div class="d-flex justify-content-center">
+        <div class="h2 p-3 m-2 list" id="kyoyang">
+            <a href="#">교양</a>
+        </div>
+        <div class="h2 p-3 m-2 list" id="major">
+            <a href="#">전공</a>
+        </div>
+        <div class="h2 p-3 m-2 list" id="graduate">
+            <a href="#">졸업요건</a>
+        </div>
+        <div class="h2 p-3 m-2 list" id="group">
+            <a href="#">소모임</a>
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center" style="">
+    <div id="kyoyang_info" style="background-color: lightgray; width: 850px; border-radius: 5px">
+        <div class="p-3">
+            <p class="h3"><b>교양</b></p>
+            <p><b>기본소양 (9학점)</b></p>
+            <ul>
+                <li>공학윤리</li>
+                <li>공학경제</li>
+                <li>기술창조와특허</li>
+            </ul>
+            <p><b>공통교양 (14~16학점)</b></p>
+            <ul>
+                <li>자아와명상 1, 2</li>
+                <li>불교와인간</li>
+                <li>EAS 1, 2</li>
+            </ul>
+        </div>
+    </div>
+    <div id="major_info" style="background-color: lightgray; width: 850px; border-radius: 5px; display: none">
+        <div class="p-3">
+            <p class="h3"><b>전공</b></p>
+            <p><b>기본소양 (9학점)</b></p>
+            <ul>
+                <li>공학윤리</li>
+                <li>공학경제</li>
+                <li>기술창조와특허</li>
+            </ul>
+            <p><b>공통교양 (14~16학점)</b></p>
+            <ul>
+                <li>자아와명상 1, 2</li>
+                <li>불교와인간</li>
+                <li>EAS 1, 2</li>
+            </ul>
+        </div>
+    </div>
+    <div id="graduate_info" style="background-color: lightgray; width: 850px; border-radius: 5px; display: none">
+        <div class="p-3">
+            <p class="h3"><b>졸업요건</b></p>
+            <p><b>기본소양 (9학점)</b></p>
+            <ul>
+                <li>공학윤리</li>
+                <li>공학경제</li>
+                <li>기술창조와특허</li>
+            </ul>
+            <p><b>공통교양 (14~16학점)</b></p>
+            <ul>
+                <li>자아와명상 1, 2</li>
+                <li>불교와인간</li>
+                <li>EAS 1, 2</li>
+            </ul>
+        </div>
+    </div>
+    <div id="group_info" style="background-color: lightgray; width: 850px; border-radius: 5px; display: none">
+        <div class="p-3">
+            <p class="h3"><b>소모임</b></p>
+            <p><b>기본소양 (9학점)</b></p>
+            <ul>
+                <li>공학윤리</li>
+                <li>공학경제</li>
+                <li>기술창조와특허</li>
+            </ul>
+            <p><b>공통교양 (14~16학점)</b></p>
+            <ul>
+                <li>자아와명상 1, 2</li>
+                <li>불교와인간</li>
+                <li>EAS 1, 2</li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"
+></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#kyoyang").click(function () {
+            $("#kyoyang_info").css("display", "");
+            $("#major_info").css("display", "none");
+            $("#graduate_info").css("display", "none");
+            $("#group_info").css("display", "none");
+        });
+        $("#major").click(function () {
+            $("#kyoyang_info").css("display", "none");
+            $("#major_info").css("display", "");
+            $("#graduate_info").css("display", "none");
+            $("#group_info").css("display", "none");
+        });
+        $("#graduate").click(function () {
+            $("#kyoyang_info").css("display", "none");
+            $("#major_info").css("display", "none");
+            $("#graduate_info").css("display", "");
+            $("#group_info").css("display", "none");
+        });
+        $("#group").click(function () {
+            $("#kyoyang_info").css("display", "none");
+            $("#major_info").css("display", "none");
+            $("#graduate_info").css("display", "none");
+            $("#group_info").css("display", "");
+        });
+    });
+</script>
 </html>

@@ -1,9 +1,10 @@
 package M.S.C.minsu.dto;
 import lombok.Getter;
 
+
+@Getter
 public class SmallGroupDTO {
 
-    @Getter
     String Gname;
     String Bname;
     String Laddr;

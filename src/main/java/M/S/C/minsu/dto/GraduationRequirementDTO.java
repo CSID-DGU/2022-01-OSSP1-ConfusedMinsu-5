@@ -1,9 +1,8 @@
 package M.S.C.minsu.dto;
 import lombok.Getter;
 
+@Getter
 public class GraduationRequirementDTO {
-
-    @Getter
 
     Integer GetGrade;
     String AvgGrade;
