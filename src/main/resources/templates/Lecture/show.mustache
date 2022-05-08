@@ -1,0 +1,20 @@
+{{>layout/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Content</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#Lecture}}
+        <tr>
+            <th>{{Id}}</th>
+            <td>{{major}}</td>
+            <td>{{name}}</td>
+        </tr>
+    {{/Lecture}}
+    </tbody>
+</table>
+{{>layout/footer}}
