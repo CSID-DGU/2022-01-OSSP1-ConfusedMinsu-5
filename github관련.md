@@ -32,7 +32,7 @@ git init은 원래 있던 파일에 github 연결
 적용된 파일 업로드  
 
 9. git branch -d 삭제할브랜치이름  
-merge한 브랜치 삭제
+merge한 브랜치 삭제  
 **중요! master에서 git pull을 한 뒤 local의 branch를 삭제해야한다.
 
 ->2번으로 돌아가서 무한반복  
