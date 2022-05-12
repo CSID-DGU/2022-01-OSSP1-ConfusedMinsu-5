@@ -1,13 +1,18 @@
 package M.S.C.minsu.dto;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SmallGroupDTO {
 
-    String Gname;
-    String Bname;
-    String Laddr;
-    String MajorName;
+    private String Gname;
+    private String Bname;
+    private String Laddr;
+    private String MajorName;
 
 }

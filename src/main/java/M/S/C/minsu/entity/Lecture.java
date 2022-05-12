@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity //db가 해당 객체를 인식 가능!
-@AllArgsConstructor
+
 @ToString
 public class Lecture {
 
@@ -19,8 +19,7 @@ public class Lecture {
     @Column
     public String mname;
 
-    public Lecture() {
-    }
+
 
     public void setId(Long id) {
         this.id = id;

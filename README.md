@@ -36,6 +36,8 @@ Relationship between SCHEDULED_LECTURE and BUILDING -> many to one
 
 ### React 실행
 - Spring Boot 실행
-- react project가 설치된 파일 (\react\test_react)에서 npm start 명령어 입력.
+- react project가 설치된 파일 (\react\test_react)
+1. npm install
+2. npm start 
 (Spring Boot 실행 안하고 react 실행 시 Proxy error 발생)
 React 종료 할 때는 terminal에 ctrl + c 입력
