@@ -11,9 +11,6 @@ public class TestDTO {
     private String major;
     private String name;
 
-    public Lecture toEntity(){
-        return new Lecture(null, major, name);
-    }
 
 
     public String showmjaor(){
