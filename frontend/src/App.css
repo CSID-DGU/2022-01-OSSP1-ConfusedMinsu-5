@@ -1,0 +1,78 @@
+.Header{
+  background-color:orange
+}
+
+.Navigation{
+  background-color:lightgray;
+}
+
+.GraduateGuide .list{
+  width:200px;
+        border-radius: 5px;
+        background-color: lightgray;
+        text-align: center;
+}
+
+.GraduateGuide .list:hover{
+  background-color:gray;
+}
+
+.GraduateGuide .component{
+  background-color: lightgray;
+  width:850px;
+  border-radius: 5px;
+}
+
+.GraduateGuide .component #kyoyang_info,#major_info, #graduate_info, #group_info{
+  display: none;
+}
+
+.Navigation #guide, #college, #major{
+  color: black;
+}
+
+.ScheduleGuide .container{
+  width:600px;
+}
+
+.ScheduleGuide .schedule_list{
+  width:500px;
+  border-radius :10px;
+  background-color: lightblue;
+}
+
+.ScheduleGuide .btn{
+  width:100px;
+}
+
+ #library_cover{
+  position:relative;
+  top:-500px;
+  left:360px;
+  clip-path:polygon(40% 0%, 110% 10%, 75% 75%, 60% 100%, 30% 85%,10% 50%,10% 40%, 15% 20%);
+  width:150px;
+  height:150px;
+  background-color: rgba(0,120,200,0.7);
+  display:block;
+  
+}
+#library_cover:hover{
+  display:block;
+  background-color: rgba(0,120,200,0.7);
+}
+
+#new_tech_cover{
+  position:relative;
+  top:-700px;
+  left:200px;
+  clip-path:polygon(40% 40%, 55% 40%, 80% 10%, 100% 15%,100% 30%,85% 50%,85% 70%, 60% 85%,30% 75%, 25% 50%);
+  width:200px;
+  height:200px;
+  background-color: ;
+  display:block;
+  
+}
+#new_tech_cover:hover{
+  display:block;
+  background-color: rgba(0,200,120,0.7);
+}

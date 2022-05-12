@@ -108,6 +108,10 @@ public class LectureController {
         return "/Lecture/select";
     }
 
+
+
+
+
 /*
     @GetMapping("/Lecture/{id}")
     public String show(@PathVariable Long id, Model model){
