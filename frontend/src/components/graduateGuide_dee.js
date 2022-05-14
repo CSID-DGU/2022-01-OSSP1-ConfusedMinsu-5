@@ -60,7 +60,7 @@ function GraduateGuide(){
 
 
         useEffect(()=>{
-            Axios.post("/api/graduateGuide/컴퓨터공학과/kyoyang").then((res)=>{
+            Axios.post("/api/graduateGuide/전자전기공학과/kyoyang").then((res)=>{
                     if(res.data){
                         console.log(res.data);
                         setUser(res.data);
@@ -71,7 +71,7 @@ function GraduateGuide(){
         },[]);
 
         useEffect(()=>{
-                    Axios.post("/api/graduateGuide/컴퓨터공학과").then((res)=>{
+                    Axios.post("/api/graduateGuide/전자전기공학과").then((res)=>{
                             if(res.data){
                                 console.log(res.data);
                                 setMajor(res.data);
@@ -82,7 +82,7 @@ function GraduateGuide(){
         },[]);
 
         useEffect(()=>{
-                            Axios.post("/api/graduateGuide/컴퓨터공학과/grad").then((res)=>{
+                            Axios.post("/api/graduateGuide/전자전기공학과/grad").then((res)=>{
                                     if(res.data){
                                         console.log("grad");
                                         console.log(res.data);
@@ -94,7 +94,7 @@ function GraduateGuide(){
                 },[]);
 
         useEffect(()=>{
-                            Axios.post("/api/graduateGuide/컴퓨터공학과/sGroup").then((res)=>{
+                            Axios.post("/api/graduateGuide/전자전기공학과/sGroup").then((res)=>{
                                     if(res.data){
                                         console.log("sGroup");
                                         console.log(res.data);

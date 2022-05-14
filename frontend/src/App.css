@@ -24,7 +24,7 @@
 }
 
 .GraduateGuide .component #kyoyang_info,#major_info, #graduate_info, #group_info{
-  display: none;
+  display: block;
 }
 
 .Navigation #guide, #college, #major{
