@@ -20,7 +20,8 @@ Run MinsuApplication
 
 ## 2. React 실행
 ```
-cd 2022-01-OSSP1-ConfusedMinsu-5\front\react\test_react
+cd 2022-01-OSSP1-ConfusedMinsu-5\frontend
 npm install
 npm start 
 ```
+
