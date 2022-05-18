@@ -32,21 +32,21 @@ function GraduateGuide(){
             setIsMajor(false);
             setIsGrad(false);
             setIsSGroup(false);
-            console.log("click");
+
         }
         const onMajor =()=>{
                     setIsKyoyang(false);
                     setIsMajor(true);
                     setIsGrad(false);
                     setIsSGroup(false);
-                    console.log("click");
+
         }
         const onGrad =()=>{
                     setIsKyoyang(false);
                     setIsMajor(false);
                     setIsGrad(true);
                     setIsSGroup(false);
-                    console.log("click");
+
         }
 
         const onSGroup =()=>{
@@ -54,7 +54,7 @@ function GraduateGuide(){
                     setIsMajor(false);
                     setIsGrad(false);
                     setIsSGroup(true);
-                    console.log("click");
+
         }
 
 
@@ -62,7 +62,7 @@ function GraduateGuide(){
         useEffect(()=>{
             Axios.post("/api/graduateGuide/전자전기공학과/kyoyang").then((res)=>{
                     if(res.data){
-                        console.log(res.data);
+
                         setUser(res.data);
                     }else{
                         alert("failed to");
@@ -73,7 +73,7 @@ function GraduateGuide(){
         useEffect(()=>{
                     Axios.post("/api/graduateGuide/전자전기공학과").then((res)=>{
                             if(res.data){
-                                console.log(res.data);
+
                                 setMajor(res.data);
                             }else{
                                 alert("failed to");
@@ -84,8 +84,7 @@ function GraduateGuide(){
         useEffect(()=>{
                             Axios.post("/api/graduateGuide/전자전기공학과/grad").then((res)=>{
                                     if(res.data){
-                                        console.log("grad");
-                                        console.log(res.data);
+
                                         setGrad(res.data);
                                     }else{
                                         alert("failed to");
@@ -96,19 +95,19 @@ function GraduateGuide(){
         useEffect(()=>{
                             Axios.post("/api/graduateGuide/전자전기공학과/sGroup").then((res)=>{
                                     if(res.data){
-                                        console.log("sGroup");
-                                        console.log(res.data);
+
+
                                         setSGroup(res.data);
                                     }else{
                                         alert("failed to");
-                                    }
-                            });
-                },[]);
+                        }
+               });
+        },[]);
 
         const rendering = () => {
             const result = [];
             for (let i = 0;i<Kyoyang.length; i++){
-                result.push(<li key={i}>{Kyoyang[i].lname}, {Kyoyang[i].majorCategoryDetail}</li>);
+                result.push(<div className="lectureList m-1 p-1 text-center" key={i}>{Kyoyang[i].lname}, {Kyoyang[i].majorCategoryDetail}</div>);
             }
             return result;
         }
@@ -156,21 +155,21 @@ function GraduateGuide(){
 
         return(
             <div className="GraduateGuide">
-
+                <h1 className="text-center">전자전기공학과</h1>
 
 
                 <div className="row justify-content-center">
                     <div className="d-flex justify-content-center">
-                        <div className="h2 p-3 m-2 list" id="kyoyang" onClick={onKyoyang} >
+                        <div className="h2 p-3 list" id="kyoyang" onClick={onKyoyang} >
                             교양
                         </div>
-                        <div className="h2 p-3 m-2 list" id="major" onClick={onMajor}>
+                        <div className="h2 p-3  list" id="major" onClick={onMajor}>
                             전공
                         </div>
-                        <div className="h2 p-3 m-2 list" id="graduate" onClick={onGrad}>
+                        <div className="h2 p-3 list" id="graduate" onClick={onGrad}>
                             졸업요건
                         </div>
-                        <div className="h2 p-3 m-2 list" id="group" onClick={onSGroup}>
+                        <div className="h2 p-3 list" id="group" onClick={onSGroup}>
                             소모임
                         </div> 
                     </div>
@@ -178,7 +177,7 @@ function GraduateGuide(){
                  <div className="d-flex justify-content-center">
                 {isKyoyang &&
 
-                                         <div className="component" id="kyoyang_info">
+                                         <div className="row component" id="kyoyang_info">
                                              <div className="p-3">
                                                  <p className="h3"><b>교양</b></p>
                                                  <p><b>기본소양 (9학점)</b></p>
@@ -186,10 +185,27 @@ function GraduateGuide(){
 
                                                  </ul>
                                                  <p><b>공통교양 (14~16학점)</b></p>
-                                                 <ul>
 
-                                                     {rendering()}
-                                                 </ul>
+
+
+
+                                                 <div className="row listbox justify-content-center">
+                                                 {rendering()}
+<div className="lectureList m-1 p-1 text-center">
+                                                      자료구조
+                                                 </div>
+                                                 <div className="lectureList m-1 p-1 text-center">
+                                                      자료구조
+                                                 </div>
+                                                 <div className="lectureList m-1 p-1 text-center">
+                                                                                                       자료구조
+                                                                                                  </div>
+                                                                                                  <div className="lectureList m-1 p-1 text-center">
+                                                                                                       자료구조
+                                                                                                  </div>
+                                                 </div>
+
+
                                              </div>
                                          </div>
                 }

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown, Modal} from 'react-bootstrap';
 import $ from 'jquery';
 import { render } from '@testing-library/react';
 import Axios from "axios"
@@ -32,21 +32,21 @@ function GraduateGuide(){
             setIsMajor(false);
             setIsGrad(false);
             setIsSGroup(false);
-            console.log("click");
+
         }
         const onMajor =()=>{
                     setIsKyoyang(false);
                     setIsMajor(true);
                     setIsGrad(false);
                     setIsSGroup(false);
-                    console.log("click");
+
         }
         const onGrad =()=>{
                     setIsKyoyang(false);
                     setIsMajor(false);
                     setIsGrad(true);
                     setIsSGroup(false);
-                    console.log("click");
+
         }
 
         const onSGroup =()=>{
@@ -54,15 +54,11 @@ function GraduateGuide(){
                     setIsMajor(false);
                     setIsGrad(false);
                     setIsSGroup(true);
-                    console.log("click");
+
         }
-
-
-
         useEffect(()=>{
             Axios.post("/api/graduateGuide/컴퓨터공학과/kyoyang").then((res)=>{
                     if(res.data){
-                        console.log(res.data);
                         setUser(res.data);
                     }else{
                         alert("failed to");
@@ -71,21 +67,18 @@ function GraduateGuide(){
         },[]);
 
         useEffect(()=>{
-                    Axios.post("/api/graduateGuide/컴퓨터공학과").then((res)=>{
-                            if(res.data){
-                                console.log(res.data);
-                                setMajor(res.data);
-                            }else{
+            Axios.post("/api/graduateGuide/컴퓨터공학과").then((res)=>{
+                    if(res.data){
+                        setMajor(res.data);
+                    }else{
                                 alert("failed to");
-                            }
-                    });
+                    }
+            });
         },[]);
 
         useEffect(()=>{
                             Axios.post("/api/graduateGuide/컴퓨터공학과/grad").then((res)=>{
                                     if(res.data){
-                                        console.log("grad");
-                                        console.log(res.data);
                                         setGrad(res.data);
                                     }else{
                                         alert("failed to");
@@ -96,8 +89,7 @@ function GraduateGuide(){
         useEffect(()=>{
                             Axios.post("/api/graduateGuide/컴퓨터공학과/sGroup").then((res)=>{
                                     if(res.data){
-                                        console.log("sGroup");
-                                        console.log(res.data);
+
                                         setSGroup(res.data);
                                     }else{
                                         alert("failed to");
@@ -155,8 +147,9 @@ function GraduateGuide(){
                 }
 
         return(
+        <>
             <div className="GraduateGuide">
-
+                <h1 className="text-center">컴퓨터공학과</h1>
 
 
                 <div className="row justify-content-center">
@@ -236,7 +229,7 @@ function GraduateGuide(){
 
                 </div>
             </div>
-            
+           </>
         );
     }
 

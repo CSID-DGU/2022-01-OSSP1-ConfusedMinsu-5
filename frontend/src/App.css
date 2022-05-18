@@ -1,15 +1,63 @@
-.Header{
-  background-color:orange
+
+
+@font-face {
+    font-family: 'EliceDigitalBaeum_Regular';
+    src: url('./components/fonts/EliceDigitalCoding_Regular.ttf') format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+.App{
+  letter-spacing: -3px;
+  width:80%;
+  
+  padding:10px;
+  top:25%;
+  left:25%;
+  right:25%;
+  bottom:25%;
+  font-family: "EliceDigitalBaeum_Regular";
 }
 
+
+.main{
+  width:70%;
+}
+.Header{
+  background-color:rgb(255,180,50);
+  height:100%;
+  border-radius: 50px 0px 0px 0px;
+}
+
+.Header .title{
+  text-decoration:none;
+  color :black;
+}
+
+.nav{
+  background-color: rgb(220,220,220);;
+  height:100%;
+  border-radius: 0px 50px 0px 0px;
+}
+
+.nav .nav-item{
+  top:25%;
+}
+
+.nav .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: white;
+}
+
+.nav .nav-link{
+  text-decoration: none;
+}
 .Navigation{
-  background-color:lightgray;
+  background-color:rgb(220,220,220);
 }
 
 .GraduateGuide .list{
   width:200px;
-        border-radius: 5px;
-        background-color: lightgray;
+  height: 100%;
+        background-color: rgb(255, 248, 226);
         text-align: center;
 }
 
@@ -18,16 +66,50 @@
 }
 
 .GraduateGuide .component{
-  background-color: lightgray;
-  width:850px;
-  border-radius: 5px;
+  background-color: rgb(255, 248, 226);
+  width:800px;
+  
+ 
 }
 
 .GraduateGuide .component #kyoyang_info,#major_info, #graduate_info, #group_info{
   display: block;
 }
 
+.GraduateGuide .component .lectureList{
+    display:inline-block;
+    position :relative;
+    line-height:100px;
+    vertical-align:middle;
+    border-radius : 20px;
+    background-color : rgb(240,240,240);
+    width: 400px;
+    height:100px;
+    box-shadow : 3px 3px 3px 3px #999;
+    font-size : 20px;
+    overflow:visible;
+}
+
+.GraduateGuide .component .listbox{
+    overflow:auto;
+}
+
+.ScheduleTable .A0 #B0, .A1 #B0, .A2 #B0, .A3 #B0{
+  background-color:lightblue;
+  
+}
+
+.ScheduleTable{
+  
+  width:80%;
+}
+
 .Navigation #guide, #college, #major{
+  color: black;
+}
+
+.Navigation .menu-item{
+  text-decoration: none;
   color: black;
 }
 
@@ -44,6 +126,30 @@
 .ScheduleGuide .btn{
   width:100px;
 }
+
+.ScheduleGuide .make{
+    color:white;
+    background-color:orange;
+    width:100px;
+    text-align:center;
+    border-radius : 10px;
+    text-decoration:none;
+}
+
+.emptyGuide{
+ 
+  padding :10px;
+  
+  
+  border-radius : 0px 0px 50px 50px;
+}
+
+.emptyGuide #img{
+  border-radius: 50px;
+  border : 3px solid lightgray;
+  padding: 0px;
+}
+
 
  #library_cover{
   position:relative;

@@ -79,6 +79,7 @@ public class ReactController {
 
         return jdbcTemplate.query(query, lectureMapper);
     }
+
     @PostMapping("/api/graduateGuide/{major}")
     public List<LectureDTO> getMajorInfoLecture(@PathVariable("major") String major){
         System.out.println(major);
@@ -86,10 +87,7 @@ public class ReactController {
                 "  FROM Dongguk.LECTURE" +
                 " WHERE Mname = \""+major+"\"" +
                 "   AND MajorCategory = '전공'";
-
-
         return jdbcTemplate.query(query, lectureMapper);
-
     }
 
     @PostMapping("/api/graduateGuide/{major}/grad")
@@ -101,6 +99,7 @@ public class ReactController {
 
         return jdbcTemplate.query(query, GraduationRequirementMapper);
     }
+
     @PostMapping("/api/graduateGuide/{major}/sGroup")
     public List<SmallGroupDTO> getMajorInfoSmallGp(@PathVariable("major") String major){
 
