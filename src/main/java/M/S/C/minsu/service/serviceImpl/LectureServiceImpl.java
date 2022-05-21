@@ -28,5 +28,7 @@ public class LectureServiceImpl implements LectureService {
         }else{
             return lectureRepository.getMajorInfoGyoYang();
         }
+
     }
 }
+
