@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class LectureOpendDTO {
 
-    String MajorCategory;
-    String LectureCode;
-    String Lname;
-    String Credit;
-    String DayTime;
-    String LectureRoom;
-    String Professor;
-    String Campus;
+    private String MajorCategory;
+    private String LectureCode;
+    private String Lname;
+    private int Credit;
+    private String DayTime;
+    private String LectureRoom;
+    private String Professor;
+    private String Campus;
 
 }

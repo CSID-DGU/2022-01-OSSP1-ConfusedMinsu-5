@@ -1,8 +1,10 @@
 package M.S.C.minsu.controller;
 
 import M.S.C.minsu.dto.LectureDTO;
+import M.S.C.minsu.dto.LectureOpendDTO;
 import M.S.C.minsu.dto.TestDTO;
 import M.S.C.minsu.entity.Lecture;
+import M.S.C.minsu.service.LectureOpendService;
 import M.S.C.minsu.service.LectureService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import M.S.C.minsu.repository.LectureRepository;
+import M.S.C.minsu.repository.LectureOpendRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +35,7 @@ public class LectureController {
 
     @Autowired
     private LectureService lectureService;
+
 
     @GetMapping("/Lecture/home") //www.localhost:8080/Lecture/home에 들어가면
     public String newHomeForm(){
@@ -107,6 +111,8 @@ public class LectureController {
         model.addAttribute("lecturelist",lectureList);
         return "/Lecture/select";
     }
+
+
 
 
 
