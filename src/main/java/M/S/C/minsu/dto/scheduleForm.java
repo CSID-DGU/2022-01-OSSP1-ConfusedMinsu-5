@@ -1,6 +1,5 @@
 package M.S.C.minsu.dto;
 
-import M.S.C.minsu.entity.schedule;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

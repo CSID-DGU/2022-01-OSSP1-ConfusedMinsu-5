@@ -4,7 +4,6 @@ import M.S.C.minsu.dto.LectureDTO;
 import M.S.C.minsu.dto.LectureOpendDTO;
 import M.S.C.minsu.dto.scheduleForm;
 import M.S.C.minsu.entity.LectureOpend;
-import M.S.C.minsu.entity.schedule;
 import M.S.C.minsu.repository.LectureOpendRepository;
 import M.S.C.minsu.repository.scheduleRepository;
 import M.S.C.minsu.service.LectureOpendService;
