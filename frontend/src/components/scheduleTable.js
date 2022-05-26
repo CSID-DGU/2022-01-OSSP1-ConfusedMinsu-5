@@ -1,16 +1,35 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Table} from 'react-bootstrap';
 import '../App.css';
+import Axios from 'axios';
 
 
 
 function ScheduleTable(){
- 
+    const [table , setTable] = useState("");
+
+  useEffect(()=>{
+    Axios.post("/scheduleGuide/scheduleTable").then((res)=>{
+            console.log("before if");
+            console.log(res.data);setTable(res.data);
+            if(res.data){
+                setTable(res.data);
+                console.log("in if");
+               console.log(table);
+            }else{
+                alert("failed to");
+            }
+        }); 
+    },[table]);
+    
+    
     return(
     <>
     <div className="d-flex justify-content-center">
+    
     <Table className="ScheduleTable" size="md">
+        
             <thead>
                 <tr className="text-center">
                     <th></th>
