@@ -14,7 +14,7 @@ public class LectureDTO {
 
     private String keyword;
     private String Lname;
-    private String name;
+    private String Mname;
     private int Semester;
     private String MajorCategory;
     private String MajorCategoryDetail;

@@ -14,12 +14,15 @@ import java.util.List;
 @Repository
 public class LectureRepository  {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     private RowMapper<LectureDTO> lectureMapper = BeanPropertyRowMapper.newInstance(LectureDTO.class);
     private RowMapper<GraduationRequirementDTO> GraduationRequirementMapper = BeanPropertyRowMapper.newInstance(GraduationRequirementDTO.class);
     private RowMapper<SmallGroupDTO> SmallGroupMapper = BeanPropertyRowMapper.newInstance(SmallGroupDTO.class);
+
+    public LectureRepository(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public List<LectureDTO> getMajorInfoGyoYang(){
 
@@ -34,7 +37,7 @@ public class LectureRepository  {
 
         var query = "SELECT *" +
                 "  FROM Dongguk.LECTURE" +
-                " WHERE Mname = '"+lectureDTO.getName()+"' " +
+                " WHERE Mname LIKE %'"+lectureDTO.getMname()+"'% " +
                 "   AND MajorCategory = '전공'";
 
         return jdbcTemplate.query(query, lectureMapper);
@@ -44,7 +47,7 @@ public class LectureRepository  {
 
         var query = "SELECT *" +
                 "  FROM Dongguk.GRADUATION_REQUIREMENT" +
-                " WHERE MajorName = '"+lectureDTO.getName()+"';";
+                " WHERE MajorName = '"+lectureDTO.getMname()+"';";
 
         return jdbcTemplate.query(query, GraduationRequirementMapper);
     }
@@ -53,10 +56,11 @@ public class LectureRepository  {
 
         var query = "SELECT *" +
                 "  FROM Dongguk.SMALL_GROUP" +
-                " WHERE MajorName = '"+lectureDTO.getName()+"';";
+                " WHERE MajorName = '"+lectureDTO.getMname()+"';";
 
         return jdbcTemplate.query(query, SmallGroupMapper);
     }
+
 
 
 }
