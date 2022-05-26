@@ -13,7 +13,7 @@ import java.util.Map;
 public class MinsuApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(MinsuApplication.class, args);
 	}
-
 }

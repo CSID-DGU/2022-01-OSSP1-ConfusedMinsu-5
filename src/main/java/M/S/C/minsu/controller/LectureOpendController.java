@@ -25,10 +25,11 @@ public class LectureOpendController {
     private LectureOpendService lectureOpendService;
 
 
-
     @PostMapping("lecture/getAllData")
     public ResponseEntity<?> getAllData(@RequestBody LectureOpendDTO lectureOpendDTO){
         return new ResponseEntity<>(lectureOpendService.getAllData(lectureOpendDTO), HttpStatus.OK);
     }
+
+
 
 }

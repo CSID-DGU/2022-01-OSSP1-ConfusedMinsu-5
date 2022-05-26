@@ -4,6 +4,7 @@ import M.S.C.minsu.dto.LectureDTO;
 import M.S.C.minsu.dto.LectureOpendDTO;
 import M.S.C.minsu.dto.TestDTO;
 import M.S.C.minsu.entity.Lecture;
+import M.S.C.minsu.entity.LectureOpend;
 import M.S.C.minsu.service.LectureOpendService;
 import M.S.C.minsu.service.LectureService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +16,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import M.S.C.minsu.repository.LectureRepository;
-import M.S.C.minsu.repository.LectureOpendRepository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
