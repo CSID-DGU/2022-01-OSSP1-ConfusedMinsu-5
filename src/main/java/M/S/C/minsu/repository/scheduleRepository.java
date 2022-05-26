@@ -4,7 +4,6 @@ import java.util.*;
 import M.S.C.minsu.dto.LectureDTO;
 import M.S.C.minsu.dto.LectureOpendDTO;
 import M.S.C.minsu.dto.scheduleForm;
-import M.S.C.minsu.entity.schedule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
