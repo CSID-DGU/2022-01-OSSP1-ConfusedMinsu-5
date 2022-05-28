@@ -72,7 +72,7 @@ public class ReactController {
     private RowMapper<SmallGroupDTO> SmallGroupMapper = BeanPropertyRowMapper.newInstance(SmallGroupDTO.class);
 
     @PostMapping("/api/graduateGuide/{major}/kyoyang")
-    public List<LectureDTO> getMajorInfoGyoYang(){
+    public List<LectureDTO> getMajorInfoKyoYang(){
 
         var query = "SELECT *" +
                 "  FROM Dongguk.LECTURE" +
