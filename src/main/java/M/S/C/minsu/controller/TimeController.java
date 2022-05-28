@@ -36,7 +36,7 @@ public class TimeController {
     @Autowired
     private scheduleService ss;
 
-    @PostMapping("/scheduleGuide/scheduleTable")
+    @PostMapping("/scheduleGuide/scheduleTableEdited")
     public ResponseEntity<?> gethaksooNumber(@RequestBody scheduleForm sf){
         return new ResponseEntity<>(ss.gethaksooNumber(sf), HttpStatus.OK);
     }

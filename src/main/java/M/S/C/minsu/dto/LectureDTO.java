@@ -1,6 +1,5 @@
 package M.S.C.minsu.dto;
 
-import M.S.C.minsu.entity.Article;
 import M.S.C.minsu.entity.Lecture;
 import lombok.AllArgsConstructor;
 import lombok.Data;
