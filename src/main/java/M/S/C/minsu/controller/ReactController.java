@@ -86,7 +86,7 @@ public class ReactController {
         System.out.println(major);
         var query = "SELECT *" +
                 "  FROM Dongguk.LECTURE" +
-                " WHERE Mname = \""+major+"\"" +
+                " WHERE Mname LIKE '%"+major+"%'" +
                 "   AND MajorCategory = '전공'";
         return jdbcTemplate.query(query, lectureMapper);
     }
