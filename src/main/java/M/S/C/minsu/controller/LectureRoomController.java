@@ -18,6 +18,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.TextStyle;
+import java.util.List;
 import java.util.Locale;
 
 @Controller
@@ -27,10 +28,12 @@ public class LectureRoomController {
     @Autowired
     private JdbcTemplate jdbctemplate;
 
+    @Autowired
+    private LectureRoomService lectureRoomService;
 
 
-    @RequestMapping(method= RequestMethod.GET, value="/resultLectureRoom")//현재 요일 반환
-    public void LectureRoom(HttpServletRequest httpServletRequest){
+    @GetMapping("/lectureRoom")
+    public List<String> LectureRoom(){
         // 현재 날짜 구하기
         LocalDate nowDate = LocalDate.now();
 
@@ -45,14 +48,10 @@ public class LectureRoomController {
         // 시, 분
         int hour = nowTime.getHour();
         int minute = nowTime.getMinute();
+        double myTime=hour-8+minute/60;
 
-
-
+        System.out.println(lectureRoomService.wantedList(nowDayOfWeek,myTime));
+        return lectureRoomService.wantedList(nowDayOfWeek,myTime);
     }
 
-//    @Autowired //스프링 부트가 미리 생성해놓은 객체를 가젹다가 자동 연결
-//    private LectureRoomRepository lectureRoomRepository;
-//
-//    @Autowired
-//    private LectureRoomService lectureRoomService;
 }
