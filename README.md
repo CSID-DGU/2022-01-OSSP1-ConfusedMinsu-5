@@ -20,8 +20,16 @@ Run MinsuApplication
 
 ## 2. React 실행
 ```
-cd 2022-01-OSSP1-ConfusedMinsu-5\frontend
-npm install
-npm start 
+cd 2022-01-OSSP1-ConfusedMinsu-5\frontend\src
+npm install && npm start
 ```
+
+## 3. Project Version
+```
+Java : 11
+React.js : 5.0.1
+Spring boot : 2.7.0 (using Gradle)
+Mysql : 8.0.28
+```
+
 
