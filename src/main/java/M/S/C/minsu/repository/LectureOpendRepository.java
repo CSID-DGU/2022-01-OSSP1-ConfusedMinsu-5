@@ -77,7 +77,6 @@ public class LectureOpendRepository {
         }
         String []tokens=strArray[0].split(" ");
         int n=0;
-        System.out.println(tokens.length);
         String[][] divLec=new String[tokens.length][5];
 
         for(int i=0;i< divLec.length;i++){
@@ -89,9 +88,7 @@ public class LectureOpendRepository {
         for(String s : tokens){
             s=s.replace("{",""); s=s.replace("[","");  s=s.replace("}",""); s=s.replace("]","");
             s=s.replace(",","");  s=s.replace("=",",");
-            System.out.println(s);
             divLec[n] = s.split(","); // 2차원배열 divLec에 저장돼있음. fuck,, split -> 배열 크기도 똑같이 맞춰짐 개같은거..
-
             n++;
         }
         var query=""; int a=0;
@@ -110,25 +107,16 @@ public class LectureOpendRepository {
                 String s1=l.getDayTime();
                 String s2=l.getLname();
                 String s3=l.getCampus();
-                System.out.println(s1 + s2 + s3 + a);
                 strA[a][2]=s1; strA[a][3]=s2; strA[a][4]=s3;
 
             }a++;
-            System.out.println();
         }
 
-
-        for(int i=0;i< strA.length;i++){
-            for(int j=0;j<strA[i].length;j++){
-                System.out.print(strA[i][j]+"\t");
-            }
-            System.out.println();
-        }
         String[][][] resultMap={};
         resultMap=makeSchedule(strA);
         System.out.println("im return!");
         return resultMap;
-    }
+    }//postMapping
 
 
     // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ Line
@@ -147,32 +135,22 @@ public class LectureOpendRepository {
         }
         for (String s[] : strA) {
             for (int a = 0; a < s.length; a++) {
-                System.out.print(s[a] + "\t");
                 if (a == 0) {
                     cntArray[Integer.parseInt(s[0])]++;
                 }
             }
-            System.out.println();
         }
 
         for (int k = 0; k < cntArray.length - 1; k++) {
             if (cntArray[k + 1] == 0) break;
             ccntArray[k + 1] += ccntArray[k] + cntArray[k + 1];
         }
-//        for (i = 0; i < cntArray.length; i++) {
-//            System.out.print(cntArray[i] + "\t");
-//        }
-//        System.out.println();
-//        for (i = 0; i < ccntArray.length; i++) {
-//            System.out.print(ccntArray[i] + "\t");
-//        }
-//        System.out.println();
         int avg = 1;
         for (int x = 1; x < cntArray.length; x++) {
             if (cntArray[x] == 0) continue;
             avg *= cntArray[x];
         }
-        System.out.println("나올 수 있는 모든 경우의 수 : " + avg);
+        System.out.println("나올 수 있는 모든 경우의 수 avg : " + avg);
         int[][][] resultLec = new int[avg][30][6];
 
         flag = 0;
@@ -183,7 +161,7 @@ public class LectureOpendRepository {
             }
         }
         int[] group = new int[flag];
-        System.out.println("입력된 그룹 개수 : " + flag);
+        System.out.println("입력된 그룹 개수 flag : " + flag);
 
 
         for (int x = 0; x < resultLec.length; x++) {
@@ -217,9 +195,9 @@ public class LectureOpendRepository {
             }
             System.out.println("\n");
         }
-
+        // resultLec 면을 다 비교해서 -1인거 있으면 빼기?
         return result;
-    }
+    }//main makeSchedule
 
     private static void print_table(String[][] divLec, int i, String[][] mem, int[] cntArray, int[] ccntArray, int flag, int avg, int[][][] resultLec) {
         for (int j = 0; j < cntArray[i + 1]; j++) {
@@ -240,7 +218,7 @@ public class LectureOpendRepository {
             result[noodle][j]=mem[j];
             j++;
         }
-
+        isAllow(result[noodle],i,noodle,resultLec[noodle]);
         noodle++;
         System.out.println();
     }
@@ -249,15 +227,12 @@ public class LectureOpendRepository {
         Double[] d = new Double[4];
         String[][] onesCase= new String[flag][5];
         onesCase[j]=mem;
-        System.out.println(onesCase[j][4]);
         for (int k = 0; k < d.length; k++) {
             d[k] = 0.0;
         }
-        System.out.println(str + str.length());
         String match = "[^0-9]";
         String str1=str;
         str1 = str1.replaceAll(match, " ");
-        System.out.println("\n\n"+str1);
         str1=str1.trim().replaceAll("  ", " ");
         String[] sp=str1.split(" ");
 
@@ -268,15 +243,11 @@ public class LectureOpendRepository {
         str2 = str2.replaceAll(" ","").replaceAll(match, " ");
         str2= str2.replaceAll(" ","");
         String[] day=str2.split("");
-        System.out.println(str2);
 
 
         for(int i=0;i<sp.length;i+=2){
             String s=sp[i]+sp[i+1];
-            System.out.print(s + "\t");
             d[i/2]=Double.parseDouble(s);
-            System.out.println(d[i/2]);
-
         }
 
         for (int k = 0; k < d.length; k += 2) {
@@ -345,42 +316,31 @@ public class LectureOpendRepository {
                 }
             }
         }
-        System.out.print(d[0] + "" + d[1] + "" + d[2] + "" + d[3]);
 
-    }
+    }//inputTimeAndCheck
 
-    private static void isAllow(String[][] onesCase,int j){
-        int i=0;
-        while(i<j){
-            //onesCase[i][2]과 onesCase[j][2]가 연결인가??
-            if(connect(onesCase[i][2],onesCase[j][2])){
-                //캠퍼스 같고 연강 가능한 건물??
-                // i=j
-            }
-            i++;
+    private static void isAllow(String[][] onesCase,int flag,int noodle,int[][] resultLec){ // flag is group count
+        if(resultLec[0][0]<0){ // 시간이 겹친다면 그냥 답이 없으니 버림.
+            //do nothing
+
+
         }
+        else{ // 시간이 안겹친다면 연강인지 확인해봐야지
 
-    }
-    private static boolean connect(String s1,String s2){
-        boolean bool=true;
-        System.out.println(s1 + s2);
-//        String match = "[^0-9]";
-//         String str1=s1,str2=s1;
-//        str1 = str1.replaceAll(match, " ");
-//        str1=str1.trim().replaceAll("  ", " ");
-//        String[] sp=str1.split(" ");
-//        match = "[^\uAC00-\uD7A30-9a-zA-Z]";
-//        str2 = str2.trim().replaceAll(match, " ");
-//        match = "[0-9]";
-//        str2 = str2.replaceAll(" ","").replaceAll(match, " ");
-//        str2= str2.replaceAll(" ","");
-//        String[] day=str2.split("");
+            // 1. 시간값과 건물을 뽑아낸다.
+            String[][] time=new String[flag][2];
+            for(int a=0;a<flag;a++){
+                System.out.println("\n"+onesCase[a][2]);
+                System.out.println(onesCase[a][4]);
+            }
+            // 2. 연강인 항목들을 확인한다.
+
+            // 3. 연강인 항목들이 같은 캠퍼스인지 확인한다. (연강인데 캠퍼스가 다르면 해당 면 0으로초기화) noodle
+            // 4. 같은 캠퍼스라면 연강 가능한 건물인지 확인한다. (연강인데 불가능건물이면 해당면 0으로 초기화) noodle
+
+        }//else
 
 
-
-        return bool;
-    }
-
-
+    }//isAllow
 
 }//class
