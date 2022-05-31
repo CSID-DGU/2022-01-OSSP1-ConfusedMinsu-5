@@ -32,7 +32,7 @@ function App() {
     <Route path="/emptyGuide" element={<EmptyGuide />}></Route>
   </Routes>
 </BrowserRouter>
-</div>
+      </div>
     </div>
     
   );

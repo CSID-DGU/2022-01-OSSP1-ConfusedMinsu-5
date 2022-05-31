@@ -9,9 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.DayOfWeek;
@@ -21,7 +19,7 @@ import java.time.format.TextStyle;
 import java.util.List;
 import java.util.Locale;
 
-@Controller
+@RestController
 @Slf4j //로깅을 위한 어노테이션
 public class LectureRoomController {
 
@@ -32,7 +30,7 @@ public class LectureRoomController {
     private LectureRoomService lectureRoomService;
 
 
-    @GetMapping("/lectureRoom")
+    @PostMapping("/emptyGuide")
     public List<String> LectureRoom(){
         // 현재 날짜 구하기
         LocalDate nowDate = LocalDate.now();

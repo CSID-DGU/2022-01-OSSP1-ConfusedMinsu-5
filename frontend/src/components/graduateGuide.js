@@ -170,16 +170,16 @@ function GraduateGuide() {
 
                 <div className="row justify-content-center">
                     <div className="d-flex justify-content-center">
-                        <div className="h2 p-3 m-2 list" id="kyoyang" onClick={onKyoyang}>
+                        <div className="h2 p-3  list" id="kyoyang" onClick={onKyoyang}>
                             교양
                         </div>
-                        <div className="h2 p-3 m-2 list" id="major" onClick={onMajor}>
+                        <div className="h2 p-3  list" id="major" onClick={onMajor}>
                             전공
                         </div>
-                        <div className="h2 p-3 m-2 list" id="graduate" onClick={onGrad}>
+                        <div className="h2 p-3  list" id="graduate" onClick={onGrad}>
                             졸업요건
                         </div>
-                        <div className="h2 p-3 m-2 list" id="group" onClick={onSGroup}>
+                        <div className="h2 p-3  list" id="group" onClick={onSGroup}>
                             소모임
                         </div>
                     </div>

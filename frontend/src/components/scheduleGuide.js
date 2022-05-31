@@ -128,7 +128,7 @@ const handleShow5 = () => setShow5(true);
     Axios.post("/scheduleGuide").then((res)=>{
             if(res.data){
                 setLecture(res.data);
-                //console.log(lecture);
+                console.log(lecture);
             }else{
                 alert("failed to");
             }
@@ -152,7 +152,7 @@ const handleShow5 = () => setShow5(true);
     const arrRender = () =>{
         const result = [];
         for(let i = 0;i<index;i++){
-            console.log()
+
             result.push(<p key={i}>{array[i]}</p>)
         }
         
@@ -168,7 +168,7 @@ const handleShow5 = () => setShow5(true);
             </div>
             <div className="container mb-5" >
                 <div className="row justify-content-center ">
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g1" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 1</h5>
                             <i className="fa-solid fa-circle-plus"></i>
@@ -182,9 +182,9 @@ const handleShow5 = () => setShow5(true);
                         
                     </div>
 
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g2" >
                         <div className="d-flex">
-                            <h5 className="col-md-8">그룹 2</h5>
+                            <h5 className="col-md-8 ">그룹 2</h5>
                             <a className="col-md-2"id="add"  onClick={handleShow1}>추가</a>
 
                             
@@ -195,7 +195,7 @@ const handleShow5 = () => setShow5(true);
                             <p>시간표를 담아주세요.</p>    
                         </div>
                     </div>
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g3" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 3</h5>
                             <a className="col-md-2"id="add"  onClick={handleShow2}>추가</a>
@@ -206,7 +206,7 @@ const handleShow5 = () => setShow5(true);
                             <p>시간표를 담아주세요.</p>    
                         </div>
                     </div>
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g4" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 4</h5>
                             <a className="col-md-2"id="add" onClick={handleShow3}>추가</a>
@@ -217,7 +217,7 @@ const handleShow5 = () => setShow5(true);
                             <p>시간표를 담아주세요.</p>    
                         </div>
                     </div>
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g5" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 5</h5>
                             <a className="col-md-2"id="add" onClick={handleShow4}>추가</a>
@@ -228,7 +228,7 @@ const handleShow5 = () => setShow5(true);
                             <p>시간표를 담아주세요.</p>    
                         </div>
                     </div>
-                    <div className="schedule_list p-4 m-3" >
+                    <div className="schedule_list p-4 m-3 g6" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 6</h5>
                             <a className="col-md-2"id="add"onClick={handleShow5}>추가</a>

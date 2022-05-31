@@ -1,0 +1,106 @@
+.tableBox{
+    width:70%;
+    position:relative;
+}
+
+.day{
+    width:20%;
+
+    position: absolute;
+}
+
+.twoBox{
+    height:200px;
+    width:100%;
+    position :absolute;
+}
+
+.oneHalfBox{
+    
+    height:150px;
+    width:100%;
+    position :absolute;
+}
+
+.mon{
+ left:0%;   
+}
+
+.tue{
+    left:20%;
+}
+
+.wed{
+    left:40%;
+}
+
+.thr{
+    left:60%;
+}
+
+.fri{
+    left:80%;
+}
+
+.nine{
+    top:100px;
+}
+
+.ten{
+    top:200px;
+}
+.eleven{
+    top:300px;
+}
+
+.elevenHalf{
+    top:350px;
+}
+
+.twelve{
+    top:400px;
+}
+
+.thirteen{
+    top:500px;
+}
+
+.thirteenHalf{
+    top:550px;
+}
+
+.fourteen{
+    top:600px;
+}
+
+.fifteen{
+    top:700px;
+}
+
+.seventeenHalf{
+    top:950px;
+}
+
+.lecture1{
+    background-color: lightblue;
+}
+
+.lecture2{
+    background-color: lightcoral;
+}
+
+.lecture3{
+    background-color: lightgoldenrodyellow;
+}
+
+.lecture4{
+    background-color: lightgreen;
+}
+
+.lecture5{
+    background-color: lightskyblue;
+}
+
+.lecture6{
+    background-color: lightpink;
+}
