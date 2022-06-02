@@ -6,8 +6,8 @@ import Axios from 'axios';
 import '../style.css';
 
 
-function makeTable(){
-    const time = '월8.0-10.0,화9.0-11.0,월10.0-12.0,목15.0-17.0,월13.5-15.0,수10.0-11.5,월15.0-17.0,화13.0-15.0,화15.0-16.5,목13.5-15.0,월17.5-19.5,금14.0-16.0';
+function makeTable(table){
+    const time = table;
     var timeArr = []
     var day;
     var boxSize;
@@ -71,19 +71,19 @@ function ScheduleTable(){
 
     const [table , setTable] = useState("");
 
-//   useEffect(()=>{
-//     Axios.post("/scheduleGuide/scheduleTable").then((res)=>{
-//             console.log("before if");
-//             console.log(res.data);setTable(res.data);
-//             if(res.data){
-//                 setTable(res.data);
-//                 console.log("in if");
-//                console.log(table);
-//             }else{
-//                 alert("failed to");
-//             }
-//         }); 
-//     },[table]);
+  useEffect(()=>{
+    Axios.post("/scheduleTable.do").then((res)=>{
+            console.log("before if");
+            console.log(res.data);setTable(res.data);
+            if(res.data){
+                setTable(res.data);
+                console.log("in if");
+               console.log(table);
+            }else{
+                alert("failed to");
+            }
+        }); 
+    },[table]);
     
     
     return(

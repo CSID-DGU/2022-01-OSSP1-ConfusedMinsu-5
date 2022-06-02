@@ -10,6 +10,8 @@ const arr = [];
 
 let index = 0;
 
+    
+
 
 
 function createLecture(){
@@ -121,8 +123,15 @@ const [show5, setShow5] = useState(false);
 
 const handleClose5 = () => setShow5(false);
 const handleShow5 = () => setShow5(true);
+
+const [show6, setShow6] = useState(false);
+
+const handleClose6 = () => setShow6(false);
+const handleShow6 = () => setShow6(true);
   
   const [lecture , setLecture] = useState("");
+
+  const [table,setTable] = useState("");
 
   useEffect(()=>{
     Axios.post("/scheduleGuide").then((res)=>{
@@ -133,7 +142,7 @@ const handleShow5 = () => setShow5(true);
                 alert("failed to");
             }
     });
-},[lecture]);
+},[]);
 
 
 
@@ -160,6 +169,79 @@ const handleShow5 = () => setShow5(true);
     } 
 
   const lectureElement = document.getElementById("lectureG1");
+
+  const makeTable = (table) =>{
+    var result = "";
+    for(let i = 0;i<table.length;i++){
+        for(let j=0;j<table[i].length;j++){
+            
+            result+=table[i][j][2];
+            result+=','
+        }
+    }
+    console.log(result);
+    makeWholeTable(result);    
+}
+
+const makeWholeTable = (table) =>{
+    const time = table;
+    var timeArr = []
+    var day;
+    var boxSize;
+    var startTime;
+    var finishTime;
+    var date;
+
+    var temp;
+    console.log(time)
+    timeArr = time.split(',');
+    for(let i = 0;i<timeArr.length;i++){;
+        day = timeArr[i].substr(0,1);
+        temp = timeArr[i].split('-');
+        startTime = temp[0].substr(1,);
+        finishTime = temp[1];
+
+        boxSize = finishTime- startTime;
+        
+        if(day == '월') date = document.querySelector('.mon');
+        else if(day == '화') date = document.querySelector('.tue');
+        else if(day == '수') date = document.querySelector('.wed');
+        else if(day == '목') date = document.querySelector('.thr');
+        else if(day == '금') date = document.querySelector('.fri');
+        const inner_box = document.createElement('div');
+        if(startTime == '0.0') inner_box.setAttribute('class','eight');
+        else if(startTime == '0.5') inner_box.setAttribute('class','eightHalf');
+        else if(startTime == '1.0') inner_box.setAttribute('class','nine');
+        else if(startTime == '1.5') inner_box.setAttribute('class','nineHalf');
+        else if(startTime == '2.0') inner_box.setAttribute('class','ten');
+        else if(startTime == '2.5') inner_box.setAttribute('class','tenHalf');
+        else if(startTime == '3.0') inner_box.setAttribute('class','eleven');
+        else if(startTime == '3.5') inner_box.setAttribute('class','elevenHalf');
+        else if(startTime == '4.0') inner_box.setAttribute('class','twelve');
+        else if(startTime == '4.5') inner_box.setAttribute('class','twelveHalf');
+        else if(startTime == '5.0') inner_box.setAttribute('class','thirteen');
+        else if(startTime == '5.5') inner_box.setAttribute('class','thirteenHalf');
+        else if(startTime == '6.0') inner_box.setAttribute('class','fourteen');
+        else if(startTime == '6.5') inner_box.setAttribute('class','fourteenHalf');
+        else if(startTime == '7.0') inner_box.setAttribute('class','fifteen');
+        else if(startTime == '7.5') inner_box.setAttribute('class','fifteenHalf');
+        else if(startTime == '8.0') inner_box.setAttribute('class','sixteen');
+        else if(startTime == '8.5') inner_box.setAttribute('class','sixteenHalf');
+        else if(startTime == '9.0') inner_box.setAttribute('class','seventeen');
+        else if(startTime == '9.5') inner_box.setAttribute('class','seventeenHalf');
+        else if(startTime == '10.0') inner_box.setAttribute('class','eighteen');
+
+        if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
+        else if(boxSize == 1.5) inner_box.className+=' twoBox';
+        else if(boxSize == 0.5) inner_box.className+=' oneBox';
+
+        inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
+      
+        inner_box.innerHTML+=timeArr[i];
+        date.appendChild(inner_box);
+     
+    }
+}
     return(
     <>
         <div className="ScheduleGuide">
@@ -239,8 +321,28 @@ const handleShow5 = () => setShow5(true);
                             <p>시간표를 담아주세요.</p>    
                         </div>
                     </div>
+                    <input type="button" className='btn btn-primary' value="make" onClick={()=>{
+                    Axios(
+                        {
+                            url : '/scheduleTable.do',
+                            method : 'post',
+                            data:{
+                                arr
+                            },
+                            baseURL:'http://localhost:3000'
+                        }).then(response=>{
+                        setTable(response.data);
+                        console.log(response.data);
+                        
+                        setTimeout(makeTable(response.data),3000);
+                        
+                    }).catch(error=>{
+                        console.log(error.response);
+                    });
+                    }}></input>
+                    
                     <Link to={'/scheduleGuide/scheduleTable'} className="make pt-3 pb-3" onClick={()=>{
-
+                        
                         Axios(
                             {
                                 url : '/scheduleTable.do',
@@ -250,11 +352,36 @@ const handleShow5 = () => setShow5(true);
                                 },
                                 baseURL:'http://localhost:3000'
                             }).then(response=>{
+                            setTable(response);
                             console.log(response.data);
                         }).catch(error=>{
                             console.log(error.response);
                         });
                     }}>만들기</Link>
+                    {
+                        ()=>makeTable()
+                    }
+                    <div className="d-flex justify-content-center">
+                        <div class="tableBox">
+                            <div class="d-flex ">
+                                <div class="day mon">
+                                    
+                                </div>
+                                <div class="day tue">
+                                    
+                                </div>
+                                <div class="day wed">
+                                    
+                                </div>
+                                <div class="day thr">
+                                    
+                                </div>
+                                <div class="day fri">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-venter" centered>
@@ -439,6 +566,22 @@ const handleShow5 = () => setShow5(true);
                         닫기
                     </Button>
                     <Button variant="primary" onClick={()=>{handleClose5();createLecture5();}}>
+                        추가하기
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal show={show6} onHide={handleClose6} size="lg" aria-labelledby="contained-modal-title-venter" centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>강의담기</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose6}>
+                        닫기
+                    </Button>
+                    <Button variant="primary" onClick={handleClose6}>
                         추가하기
                     </Button>
                 </Modal.Footer>

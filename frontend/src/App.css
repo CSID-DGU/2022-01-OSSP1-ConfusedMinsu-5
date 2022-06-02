@@ -177,19 +177,33 @@
   background-color: lightyellow;
 }
 
+.emptyGuide .categories ul .category:hover{
+  margin:px;
+  padding:10px;
+  background-color: orange;
+}
+
+.emptyGuide ul{
+  padding-left: 0px;
+}
 
 .emptyGuide  .tabs{
-  margin:0px 0px 10px 0px;
-  padding:20px;
+  margin:0px 0px 0px 0px;
+  padding:10px 0px 10px 0px;
   background-color: orange;
-  
+  height: 973px;
+  overflow: scroll;
+}
+
+.emptyGuide .tabs::-webkit-scrollbar{
+  display: none;
 }
 
 .emptyGuide .tabs  a{
   margin : 3px;
-  padding:3px;
+  padding:2px 5px 2px 5px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: px;
   
 }
 .tooltip {
@@ -202,6 +216,10 @@
   pointer-events: none;
   z-index: 1000;
   opacity: 1;
+}
+
+.containerr{
+  position: relative;
 }
 
  #library_cover{

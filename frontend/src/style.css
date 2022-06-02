@@ -22,6 +22,12 @@
     position :absolute;
 }
 
+.oneBox{
+    
+    height:100px;
+    width:100%;
+    position :absolute;
+}
 .mon{
  left:0%;   
 }
