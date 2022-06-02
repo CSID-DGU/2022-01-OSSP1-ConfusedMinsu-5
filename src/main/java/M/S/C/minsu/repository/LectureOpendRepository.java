@@ -267,38 +267,81 @@ public class LectureOpendRepository {
                 if (k == 0) {
                     switch (day[0]) {
                         case "월":
-//                            if(((Integer.parseInt(String.valueOf(Math.round(l))))!=0) && (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l))))-1][0] > 0 )&&l==d[k]){
-//                                //연강인지 체크해볼것
-//                                resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
-//                            }
                             if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
-                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0)){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
                                     // 기존의 강의들과 시간, 캠퍼스 비교하기
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = false;
-                                        //현재강의와 이전 강의들 비교
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
-                                    // result[noodle][j] = 현재 넣고있는 강의
-                                    // result[noodle][0-j] = 넣고있는 강의
                                 }
                             }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]++;
                             break;
                         case "화":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][1] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]++;
                             break;
                         case "수":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][2] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]++;
                             break;
                         case "목":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][3] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]++;
                             break;
                         case "금":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][4] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]++;
                             break;
                         case "토":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][5] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]++;
                             break;
                     }
@@ -311,21 +354,81 @@ public class LectureOpendRepository {
                 } else if (k == 2) {
                     switch (day[1]) {
                         case "월":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]++;
                             break;
                         case "화":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][1] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]++;
                             break;
                         case "수":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][2] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]++;
                             break;
                         case "목":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][3] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]++;
                             break;
                         case "금":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][4] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]++;
                             break;
                         case "토":
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][5] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]++;
                             break;
                     }
@@ -342,7 +445,10 @@ public class LectureOpendRepository {
     }//inputTimeAndCheck
 
     private static boolean compareTime(String[] s1, String[] s2) {
+
         //s1[2] , s2[2] 의 시간을 비교
+        Double[] d1 = new Double[4];
+        Double[] d2 = new Double[4];
         String match = "[^0-9]";
         String str1=s1[2];
         str1 = str1.replaceAll(match, " ");
@@ -356,13 +462,14 @@ public class LectureOpendRepository {
         str2 = str2.replaceAll(" ","").replaceAll(match, " ");
         str2= str2.replaceAll(" ","");
         String[] day1=str2.split("");
+
         match = "[^0-9]";
-        str1=s1[2];
+        str1=s2[2];
         str1 = str1.replaceAll(match, " ");
         str1=str1.trim().replaceAll("  ", " ");
         String[] sp2=str1.split(" ");
 
-        str2=s1[2];
+        str2=s2[2];
         match = "[^\uAC00-\uD7A30-9a-zA-Z]";
         str2 = str2.trim().replaceAll(match, " ");
         match = "[0-9]";
@@ -370,15 +477,75 @@ public class LectureOpendRepository {
         str2= str2.replaceAll(" ","");
         String[] day2=str2.split("");
 
-        // 1. 겹치는 요일을 찾는다. 2. 겹치는 요일의 시간을 확인한다.
+        for(int i=0;i<sp1.length;i++){
+            System.out.print(sp1[i]+"\t");
+        }System.out.println();
+        for(int i=0;i<sp2.length;i++){
+            System.out.print(sp2[i]+"\t");
+        }System.out.println();
         for(int i=0;i<day1.length;i++){
+            System.out.print(day1[i]+"\t");
+        }System.out.println();
+        for(int i=0;i<day2.length;i++){
+            System.out.print(day2[i]+"\t");
+        }System.out.println();
+
+        int[][] arr1=new int[2][2];
+        for(int i=0;i<2;i++){ arr1[i][0]=0; arr1[i][1]=0; }
+        boolean b=true;
+        // 1. 겹치는 요일을 찾는다. 2. 겹치는 요일의 시간을 확인한다.
+        for(int i=0;i<day1.length;i++){ // 요일이 하나도 안겹치면, false 해당 강의와는 연강이 아님.
             for(int j=0;j<day2.length;j++){
-                //모든 요일 비교가능 ,
+                if(day1[i].equals(day2[i])){
+                    b=false;
+                    arr1[j][i]++;
+                }
             }
         }
+        System.out.println(b);
+        if(b) return b; // 요일이 하나도 안겹치면 바로 return true;
+        //여기까지 정상작동 확인
+        for(int i=0;i<sp1.length;i+=2) {
+            String s = sp1[i] + sp1[i + 1];
+            d1[i / 2] = Double.parseDouble(s);
+        }
+        for(int i=0;i<sp2.length;i+=2){
+            String s=sp2[i]+sp2[i+1];
+            d2[i/2]=Double.parseDouble(s);
+
+        }
+        for (int k = 0; k < d1.length; k += 2) {
+            d1[k] /= 5;
+            d1[k + 1] /= 5;
+            System.out.println(d1[k] + "" + d1[k+1]);
+        }for (int k = 0; k < d2.length; k += 2) {
+            d2[k] /= 5;
+            d2[k + 1] /= 5;
+            System.out.println(d2[k] + "" + d2[k+1]);
+        }
+
+        System.out.println(arr1[0][0] + "" +arr1[0][1]);
+        System.out.println(arr1[1][0] + "" +arr1[1][1]);
+
+        // 이제 여기까지 왔다면 요일은 무조건 겹친다. 캠퍼스가 겹치는지 확인해보자.
+        if(s1[4]==s2[4]){ // 캠퍼스가 무조건 같아야함.
+        }
+        else{ // 캠퍼스 다르면 true 리턴 ( 안되면 트루 , 되면 펄스 )
+            return true;
+        }
+
+
+
+
+
+//
+
+//            for (double l = d[k]; l < d[k + 1]; l++) {
+//                if (k == 0) {
+
         //sp - 시간값 2~4개
         //day - 요일 1~2개
-        return false;
+        return b;
     }
 
 
