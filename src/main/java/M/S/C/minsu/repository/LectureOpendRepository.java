@@ -277,6 +277,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]++;
                             break;
                         case "화":
@@ -287,6 +297,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
@@ -303,6 +323,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]++;
                             break;
                         case "목":
@@ -313,6 +343,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
@@ -329,6 +369,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]++;
                             break;
                         case "토":
@@ -339,6 +389,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
@@ -364,6 +424,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]++;
                             break;
                         case "화":
@@ -374,6 +444,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
@@ -390,6 +470,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]++;
                             break;
                         case "목":
@@ -400,6 +490,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
@@ -416,6 +516,16 @@ public class LectureOpendRepository {
                                     }
                                 }
                             }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+                                    }
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]++;
                             break;
                         case "토":
@@ -426,6 +536,16 @@ public class LectureOpendRepository {
                                         boolean isPossible = false;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
                                         resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+                                    }
+                                }
+                            }
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                     }
                                 }
                             }
