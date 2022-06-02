@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.Collectors; // 해야할 것! 1. resultLec에 -1인 면 없애서 넘겨주기  2. 연강이면서 연강불가인거 -1로 바꿔주기
 
 @Repository
 @RestController
@@ -77,7 +77,7 @@ public class LectureOpendRepository {
         }
         String []tokens=strArray[0].split(" ");
         int n=0;
-        String[][] divLec=new String[tokens.length][5];
+        String[][] divLec=new String[tokens.length][6];
 
         for(int i=0;i< divLec.length;i++){
             for(int j=0;j<divLec[i].length;j++){
@@ -92,14 +92,14 @@ public class LectureOpendRepository {
             n++;
         }
         var query=""; int a=0;
-        String[][] strA=new String[tokens.length][5];
+        String[][] strA=new String[tokens.length][6];
         for(int i=0;i<divLec.length;i++){
             for(int j=0;j<divLec[i].length;j++){
                 strA[i][j]=divLec[i][j];
             }
         }
         for(String[] s : divLec){
-            query = "SELECT DayTime, Lname, Campus" +
+            query = "SELECT DayTime, Lname, Campus, LectureRoom" +
                     " FROM Dongguk.LECTURE_OPEND"+
                     " WHERE LectureCode='"+s[1]+"'; ";
             List<LectureOpendDTO> li= jdbcTemplate.query(query, lectureOpendMapper);
@@ -107,13 +107,14 @@ public class LectureOpendRepository {
                 String s1=l.getDayTime();
                 String s2=l.getLname();
                 String s3=l.getCampus();
-                strA[a][2]=s1; strA[a][3]=s2; strA[a][4]=s3;
-
-            }a++;
+                String s4=l.getLectureRoom();
+                strA[a][2]=s1; strA[a][3]=s2; strA[a][4]=s3; strA[a][5]=s4;
+            }
+            a++;
         }
-
         String[][][] resultMap={};
         resultMap=makeSchedule(strA);
+
         System.out.println("im return!");
         return resultMap;
     }//postMapping
@@ -124,9 +125,7 @@ public class LectureOpendRepository {
     private String[][][] makeSchedule(String[][] strA) {
 
         int i = 0, j = 0, flag = 1;
-        boolean bool = false;
 
-        //여기부터 플로우차트 반영됨
         int[] cntArray = new int[10];
         int[] ccntArray = new int[10];
 
@@ -172,8 +171,10 @@ public class LectureOpendRepository {
             }
         }
 
-        String[][] str = new String[cntArray.length][5];
-        result=new String[avg][flag][5];
+        String[][] str = new String[cntArray.length][6];
+
+        result=new String[avg][flag][6];
+
         print_table(strA, 0, str, cntArray, ccntArray, flag, avg, resultLec);
 
         System.out.println();
@@ -186,6 +187,15 @@ public class LectureOpendRepository {
             }
             System.out.println("\n");
         }
+
+        for(int k=0;k<avg;k++){
+            if(resultLec[k][0][0] == -1) {
+               for(int a=0;a<flag;a++){
+                    result[k][a]= new String[]{",", ",", ",", ",", ",", ","};
+                }
+            }
+        }
+
         for (int k = 0; k < result.length; k++) {   // result
             for (int l = 0; l < result[k].length; l++) {
                 for (int n = 0; n < result[k][l].length; n++) {
@@ -195,7 +205,7 @@ public class LectureOpendRepository {
             }
             System.out.println("\n");
         }
-        // resultLec 면을 다 비교해서 -1인거 있으면 빼기?
+
         return result;
     }//main makeSchedule
 
@@ -215,18 +225,17 @@ public class LectureOpendRepository {
         while (j < i) {
             inputTimeAndCheck(divLec, mem[j], resultLec, avg, noodle,i,j);
             //System.out.print(mem[j][2]+"\t");
-            result[noodle][j]=mem[j];
+            //result[noodle][j]=mem[j];
             j++;
         }
-        isAllow(result[noodle],i,noodle,resultLec[noodle]);
         noodle++;
         System.out.println();
     }
     private static void inputTimeAndCheck(String[][] divLec, String[] mem, int[][][] resultLec, int avg, int noodle,int flag,int j) { // 입력, 결과배열과 함께 넣어야될 데이터배열 str
         String str=mem[2];// DayTime to str
         Double[] d = new Double[4];
-        String[][] onesCase= new String[flag][5];
-        onesCase[j]=mem;
+        //String[][] onesCase= new String[flag][5];
+        result[noodle][j]=mem;
         for (int k = 0; k < d.length; k++) {
             d[k] = 0.0;
         }
@@ -262,6 +271,19 @@ public class LectureOpendRepository {
 //                                //연강인지 체크해볼것
 //                                resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
 //                            }
+                            if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0)){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                    // 기존의 강의들과 시간, 캠퍼스 비교하기
+                                    for(int a=0;a<j;a++){
+                                        boolean isPossible = false;
+                                        //현재강의와 이전 강의들 비교
+                                        isPossible= compareTime(result[noodle][j] , result[noodle][a]);
+
+                                    }
+                                    // result[noodle][j] = 현재 넣고있는 강의
+                                    // result[noodle][0-j] = 넣고있는 강의
+                                }
+                            }
                             resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]++;
                             break;
                         case "화":
@@ -319,28 +341,45 @@ public class LectureOpendRepository {
 
     }//inputTimeAndCheck
 
-    private static void isAllow(String[][] onesCase,int flag,int noodle,int[][] resultLec){ // flag is group count
-        if(resultLec[0][0]<0){ // 시간이 겹친다면 그냥 답이 없으니 버림.
-            //do nothing
+    private static boolean compareTime(String[] s1, String[] s2) {
+        //s1[2] , s2[2] 의 시간을 비교
+        String match = "[^0-9]";
+        String str1=s1[2];
+        str1 = str1.replaceAll(match, " ");
+        str1=str1.trim().replaceAll("  ", " ");
+        String[] sp1=str1.split(" ");
 
+        String str2=s1[2];
+        match = "[^\uAC00-\uD7A30-9a-zA-Z]";
+        str2 = str2.trim().replaceAll(match, " ");
+        match = "[0-9]";
+        str2 = str2.replaceAll(" ","").replaceAll(match, " ");
+        str2= str2.replaceAll(" ","");
+        String[] day1=str2.split("");
+        match = "[^0-9]";
+        str1=s1[2];
+        str1 = str1.replaceAll(match, " ");
+        str1=str1.trim().replaceAll("  ", " ");
+        String[] sp2=str1.split(" ");
 
-        }
-        else{ // 시간이 안겹친다면 연강인지 확인해봐야지
+        str2=s1[2];
+        match = "[^\uAC00-\uD7A30-9a-zA-Z]";
+        str2 = str2.trim().replaceAll(match, " ");
+        match = "[0-9]";
+        str2 = str2.replaceAll(" ","").replaceAll(match, " ");
+        str2= str2.replaceAll(" ","");
+        String[] day2=str2.split("");
 
-            // 1. 시간값과 건물을 뽑아낸다.
-            String[][] time=new String[flag][2];
-            for(int a=0;a<flag;a++){
-                System.out.println("\n"+onesCase[a][2]);
-                System.out.println(onesCase[a][4]);
+        // 1. 겹치는 요일을 찾는다. 2. 겹치는 요일의 시간을 확인한다.
+        for(int i=0;i<day1.length;i++){
+            for(int j=0;j<day2.length;j++){
+                //모든 요일 비교가능 ,
             }
-            // 2. 연강인 항목들을 확인한다.
+        }
+        //sp - 시간값 2~4개
+        //day - 요일 1~2개
+        return false;
+    }
 
-            // 3. 연강인 항목들이 같은 캠퍼스인지 확인한다. (연강인데 캠퍼스가 다르면 해당 면 0으로초기화) noodle
-            // 4. 같은 캠퍼스라면 연강 가능한 건물인지 확인한다. (연강인데 불가능건물이면 해당면 0으로 초기화) noodle
-
-        }//else
-
-
-    }//isAllow
 
 }//class
