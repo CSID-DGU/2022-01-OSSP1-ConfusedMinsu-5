@@ -26,7 +26,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Main />}></Route>
     <Route path="/api/graduateGuide/cse" element={<GraduateGuide />}></Route>
-    <Route path="/api/graduateGuide/dee" element={<GraduateGuide_DEE />}></Route>
+    <Route path="/api/graduateGuide/ene" element={<GraduateGuide_DEE />}></Route>
     <Route path="/scheduleGuide" element={<ScheduleGuide />}></Route>
     <Route path="/scheduleGuide/scheduleTable" element={<ScheduleTable />}></Route>
     <Route path="/emptyGuide" element={<EmptyGuide />}></Route>

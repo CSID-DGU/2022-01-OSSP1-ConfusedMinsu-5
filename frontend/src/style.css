@@ -1,12 +1,19 @@
 .tableBox{
     width:70%;
     position:relative;
+    display: none;
+    
+    border-radius: 10px;
 }
 
 .day{
     width:20%;
 
     position: absolute;
+}
+
+.tableBox .title{
+    background-color: rgb(253, 178, 38);
 }
 
 .twoBox{
@@ -28,24 +35,41 @@
     width:100%;
     position :absolute;
 }
+
+.timeBox{
+    width:520%;
+    left:-30px;
+    position :absolute;
+    border-top:1px solid rgba(0, 0, 0, 0.322);
+}
 .mon{
  left:0%;   
+    border-right: 1px solid black;
+ height:100%;
 }
 
 .tue{
     left:20%;
+    border-right: 1px solid black;
+ height:100%;
 }
 
 .wed{
     left:40%;
+    border-right: 1px solid black;
+    height:100%;
 }
 
 .thr{
     left:60%;
+    border-right: 1px solid black;
+    height:100%;
 }
 
 .fri{
     left:80%;
+    
+    height:100%;
 }
 
 .nine{
@@ -83,8 +107,20 @@
     top:700px;
 }
 
+.sixteen{
+    top:800px;
+}
+
+.seventeen{
+    top:900px;
+}
+
 .seventeenHalf{
     top:950px;
+}
+
+.eighteen{
+    top:1000px;
 }
 
 .lecture1{

@@ -67,55 +67,72 @@ function makeTable(table){
 
 
 function ScheduleTable(){
+    const[lecture,setLecture] =useState([]);
+    useEffect(()=>{
+        Axios.post("/scheduleGuide/scheduleTable").then((res)=>{
+                if(res.data){
+                    setLecture(res.data);
+                    console.log(lecture);
+                }else{
+                    alert("failed to");
+                }
+        });
+    },[lecture]);
     
 
-    const [table , setTable] = useState("");
 
-  useEffect(()=>{
-    Axios.post("/scheduleTable.do").then((res)=>{
-            console.log("before if");
-            console.log(res.data);setTable(res.data);
-            if(res.data){
-                setTable(res.data);
-                console.log("in if");
-               console.log(table);
-            }else{
-                alert("failed to");
-            }
-        }); 
-    },[table]);
-    
-    
+
+    const lookup=
+    [
+        {id:'1', query:'cse',text:'컴공1-1'},
+        {id:'2', query:'cse',text:'컴공1-2'},
+        {id:'3', query:'ene',text:'전전2-1'},
+        {id:'4', query:'ene',text:'전전2-2'},
+        {id:'5', query:'ene',text:'전전2-3'},
+    ];
+
+    const[seleted, setSelected] = useState("");
+
+    const changeSelecte= (event)=>{
+        setSelected(event.target.value);
+    };
+
+    var inquiries = lecture.filter(data=>{
+        //console.log(data.lectureCode.substr(0,3));
+        if(seleted === "cse" && data.lectureCode.substr(0,3)==="CSE"){
+            return data;
+        }else if(seleted === "ene" && data.lectureCode.substr(0,3)==="ENE"){
+            return data;
+        }
+    })
+
     return(
-    <>
-    <div className="d-flex justify-content-center">
-        <div class="tableBox">
-            <div class="d-flex ">
-                <div class="day mon">
-                     
-                </div>
-                <div class="day tue">
-                    
-                </div>
-                <div class="day wed">
-                    
-                </div>
-                <div class="day thr">
-                    
-                </div>
-                <div class="day fri">
-                    
+        <div style={{padding:"16px", margin:"16px",}}>
+            <div>
+                <select onChange ={changeSelecte}>
+                    <option value="cse">조건검색1</option>
+                    <option value="ene">조건검색2</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <select>
+            {inquiries.map(inquiry=>(
+                <option>{inquiry.lname}/{inquiry.dayTime}</option>
+            ))}
+                    </select>
                 </div>
             </div>
-            
         </div>
-        <Button onClick={()=>{makeTable();}}></Button>
-    </div>
+    )
+    
+
+    
         
 
 
-    </>
-    )
+    
+    
 }
 
 export default ScheduleTable;

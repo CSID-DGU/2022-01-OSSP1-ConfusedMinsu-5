@@ -1,9 +1,6 @@
 package M.S.C.minsu.controller;
 
-import M.S.C.minsu.dto.GraduationRequirementDTO;
-import M.S.C.minsu.dto.LectureDTO;
-import M.S.C.minsu.dto.SmallGroupDTO;
-import M.S.C.minsu.dto.TestDTO;
+import M.S.C.minsu.dto.*;
 import M.S.C.minsu.entity.Lecture;
 import M.S.C.minsu.service.LectureService;
 import lombok.extern.slf4j.Slf4j;
@@ -66,6 +63,8 @@ public class ReactController {
 
         return " ";
     }
+
+
 
     private RowMapper<LectureDTO> lectureMapper = BeanPropertyRowMapper.newInstance(LectureDTO.class);
     private RowMapper<GraduationRequirementDTO> GraduationRequirementMapper = BeanPropertyRowMapper.newInstance(GraduationRequirementDTO.class);

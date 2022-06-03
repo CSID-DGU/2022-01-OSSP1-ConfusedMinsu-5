@@ -6,8 +6,15 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+  font-family: 'nanumSquareRound';
+  src: url('./components/fonts/NanumSquareRoundR.ttf') format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 .App{
-  letter-spacing: -3px;
+  letter-spacing: 0px;
   width:80%;
   
   padding:10px;
@@ -15,7 +22,7 @@
   left:25%;
   right:25%;
   bottom:25%;
-  font-family: "EliceDigitalBaeum_Regular";
+  font-family: "nanumSquareRound";
 }
 
 
@@ -68,8 +75,6 @@
 .GraduateGuide .component{
   background-color: rgb(255, 248, 226);
   width:800px;
-  
- 
 }
 
 .GraduateGuide .component #kyoyang_info,#major_info, #graduate_info, #group_info{
@@ -92,6 +97,10 @@
 
 .GraduateGuide .component .listbox{
     overflow:auto;
+}
+
+.GraduateGuide li{
+  list-style-type: none;
 }
 
 .ScheduleTable .A0 #B0, .A1 #B0, .A2 #B0, .A3 #B0{

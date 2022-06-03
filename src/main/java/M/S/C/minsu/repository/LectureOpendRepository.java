@@ -53,11 +53,20 @@ public class LectureOpendRepository {
     }
 
     @PostMapping("/scheduleGuide/scheduleTable")
-    public Map<String,Object> makeTable(){
-        Map<String, Object> resultMap = new HashMap<String,Object>();
-        System.out.println("1"+temp);
-        return null;
+    public List<LectureOpendDTO> getAllDataLectureOpend1(){
+
+        var query = "SELECT *" +
+                " FROM Dongguk.LECTURE_OPEND;";
+
+        return jdbcTemplate.query(query, lectureOpendMapper);
     }
+
+//    @PostMapping("/scheduleGuide/scheduleTable")
+//    public Map<String,Object> makeTable(){
+//        Map<String, Object> resultMap = new HashMap<String,Object>();
+//        System.out.println("1"+temp);
+//        return null;
+//    }
 
 
     @RequestMapping(value="/scheduleTable.do", method=RequestMethod.POST)
@@ -124,7 +133,7 @@ public class LectureOpendRepository {
     // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ Line
 
     private String[][][] makeSchedule(String[][] strA) {
-
+        noodle=0;
         int i = 0, j = 0, flag = 1;
 
         int[] cntArray = new int[10];

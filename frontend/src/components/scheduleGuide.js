@@ -43,8 +43,10 @@ function createLecture(){
     const g3 = document.getElementById("lectureG3");
     const newDiv =document.createElement('div');
  
+    var select = document.getElementById("lecture");
+    var lectureOutput = document.getElementById('lecture').options[select.selectedIndex].innerText;
     var property = document.getElementById('lecture').value;
-    const lectureName = document.createTextNode(property);
+    const lectureName = document.createTextNode(lectureOutput);
     newDiv.appendChild(lectureName)
     g3.appendChild(newDiv);
     arr[index] = {3 :property};
@@ -54,8 +56,10 @@ function createLecture(){
     const g4 = document.getElementById("lectureG4");
     const newDiv =document.createElement('div');
  
+    var select = document.getElementById("lecture");
+    var lectureOutput = document.getElementById('lecture').options[select.selectedIndex].innerText;
     var property = document.getElementById('lecture').value;
-    const lectureName = document.createTextNode(property);
+    const lectureName = document.createTextNode(lectureOutput);
     newDiv.appendChild(lectureName)
     g4.appendChild(newDiv);
     arr[index] = {4 :property};
@@ -65,8 +69,10 @@ function createLecture(){
     const g5 = document.getElementById("lectureG5");
     const newDiv =document.createElement('div');
  
+    var select = document.getElementById("lecture");
+    var lectureOutput = document.getElementById('lecture').options[select.selectedIndex].innerText;
     var property = document.getElementById('lecture').value;
-    const lectureName = document.createTextNode(property);
+    const lectureName = document.createTextNode(lectureOutput);
     newDiv.appendChild(lectureName)
     g5.appendChild(newDiv);
     arr[index] = {5 :property};
@@ -78,8 +84,10 @@ function createLecture(){
     const g6 = document.getElementById("lectureG6");
     const newDiv =document.createElement('div');
  
+    var select = document.getElementById("lecture");
+    var lectureOutput = document.getElementById('lecture').options[select.selectedIndex].innerText;
     var property = document.getElementById('lecture').value;
-    const lectureName = document.createTextNode(property);
+    const lectureName = document.createTextNode(lectureOutput);
     newDiv.appendChild(lectureName)
     g6.appendChild(newDiv);
     arr[index] = {6 :property};
@@ -129,7 +137,7 @@ const [show6, setShow6] = useState(false);
 const handleClose6 = () => setShow6(false);
 const handleShow6 = () => setShow6(true);
   
-  const [lecture , setLecture] = useState("");
+  const [lecture , setLecture] = useState([]);
 
   const [table,setTable] = useState("");
 
@@ -172,20 +180,31 @@ const handleShow6 = () => setShow6(true);
 
   const makeTable = (table) =>{
     var result = "";
+    var title="";
     for(let i = 0;i<table.length;i++){
         for(let j=0;j<table[i].length;j++){
-            
+            title+=table[i][j][3];
+            title+=','
+            if(table[i][j][2].indexOf(',')!=-1){
+                title+=table[i][j][3];
+                title+=','
+            };
             result+=table[i][j][2];
             result+=','
         }
     }
+    var tableDiv = document.querySelector(".tableBox");
+    tableDiv.style.display='block';
     console.log(result);
-    makeWholeTable(result);    
+    console.log(title);
+    makeWholeTable(result,title);    
 }
 
-const makeWholeTable = (table) =>{
+const makeWholeTable = (table,title) =>{
     const time = table;
-    var timeArr = []
+    const titleSet = title;
+    var timeArr = [];
+    var titleArr = [];
     var day;
     var boxSize;
     var startTime;
@@ -195,6 +214,7 @@ const makeWholeTable = (table) =>{
     var temp;
     console.log(time)
     timeArr = time.split(',');
+    titleArr = titleSet.split(',');
     for(let i = 0;i<timeArr.length;i++){;
         day = timeArr[i].substr(0,1);
         temp = timeArr[i].split('-');
@@ -237,19 +257,92 @@ const makeWholeTable = (table) =>{
 
         inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
       
-        inner_box.innerHTML+=timeArr[i];
+        inner_box.innerHTML+=titleArr[i];
         date.appendChild(inner_box);
      
     }
 }
+
+    const[selected, setSelected] = useState("");
+
+    const changeSelected= (event)=>{
+        setSelected(event.target.value);
+    };
+
+    var inquiries = lecture.filter(data=>{
+        //console.log(data.lectureCode.substr(0,3));
+        if(selected === "cse" && data.lectureCode.substr(0,3)==="CSE"){
+            return data;
+        }else if(selected === "ene" && data.lectureCode.substr(0,3)==="ENE"){
+            return data;
+        }else if(selected === "civ" && data.lectureCode.substr(0,3)==="CIV"){
+            return data;
+        }
+        else if(selected === "ard" && data.lectureCode.substr(0,3)==="ARD"){
+            return data;
+        }else if(selected === "arc" && data.lectureCode.substr(0,3)==="ARC"){
+            return data;
+        }else if(selected === "mec" && data.lectureCode.substr(0,3)==="MEC"){
+            return data;
+        }
+        else if(selected === "mme" && data.lectureCode.substr(0,3)==="MME"){
+            return data;
+        }else if(selected === "ise" && data.lectureCode.substr(0,3)==="ISE"){
+            return data;
+        }else if(selected === "eme" && data.lectureCode.substr(0,3)==="EME"){
+            return data;
+        }else if(selected === "inc" && data.lectureCode.substr(0,3)==="INC"){
+            return data;
+        }else if(selected === "cen" && data.lectureCode.substr(0,3)==="CEN"){
+            return data;
+        }
+        else if(selected === "egc" && data.lectureCode.substr(0,3)==="EGC"){
+            return data;
+        }
+
+    })
+
     return(
     <>
-        <div className="ScheduleGuide">
+        <div className="ScheduleGuide d-flex justify-content-center">
             <div>
                 {arrRender()}
             </div>
-            <div className="container mb-5" >
-                <div className="row justify-content-center ">
+            <div className="tableBox" >
+                            <div className="d-flex ">
+                                
+                                <div className="day mon">
+                                    <div className='title text-center'>월</div>
+                                    <div className='timeBox nine'>9시</div>
+                                    <div className='timeBox ten'>10시</div>
+                                    <div className='timeBox eleven'>11시</div>
+                                    <div className='timeBox twelve'>12시</div>
+                                    <div className='timeBox thirteen'>13시</div>
+                                    <div className='timeBox fourteen'>14시</div>
+                                    <div className='timeBox fifteen'>15시</div>
+                                    <div className='timeBox sixteen'>16시</div>
+                                    <div className='timeBox seventeen'>17시</div>
+                                    <div className='timeBox eighteen'>18시</div>
+                                    
+                                    
+                                    
+                                </div>
+                                <div className="day tue">
+                                    <div className='title text-center'>화</div>
+                                </div>
+                                <div className="day wed">
+                                    <div className='title text-center'>수</div>   
+                                </div>
+                                <div className="day thr">
+                                    <div className='title text-center'>목</div>
+                                </div>
+                                <div className="day fri">
+                                    <div className='title text-center'>금</div>
+                                </div>
+                            </div>
+                        </div>
+            <div className="d-flex mb-5" >
+                <div className="container justify-content-center ">
                     <div className="schedule_list p-4 m-3 g1" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 1</h5>
@@ -341,69 +434,45 @@ const makeWholeTable = (table) =>{
                     });
                     }}></input>
                     
-                    <Link to={'/scheduleGuide/scheduleTable'} className="make pt-3 pb-3" onClick={()=>{
-                        
-                        Axios(
-                            {
-                                url : '/scheduleTable.do',
-                                method : 'post',
-                                data:{
-                                    arr
-                                },
-                                baseURL:'http://localhost:3000'
-                            }).then(response=>{
-                            setTable(response);
-                            console.log(response.data);
-                        }).catch(error=>{
-                            console.log(error.response);
-                        });
-                    }}>만들기</Link>
-                    {
-                        ()=>makeTable()
-                    }
-                    <div className="d-flex justify-content-center">
-                        <div class="tableBox">
-                            <div class="d-flex ">
-                                <div class="day mon">
-                                    
-                                </div>
-                                <div class="day tue">
-                                    
-                                </div>
-                                <div class="day wed">
-                                    
-                                </div>
-                                <div class="day thr">
-                                    
-                                </div>
-                                <div class="day fri">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
+                    
                 </div>
+                
             </div>
+                    
             <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-venter" centered>
                 <Modal.Header closeButton>
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major" name="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -420,21 +489,33 @@ const makeWholeTable = (table) =>{
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -451,21 +532,33 @@ const makeWholeTable = (table) =>{
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -482,21 +575,33 @@ const makeWholeTable = (table) =>{
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -513,21 +618,33 @@ const makeWholeTable = (table) =>{
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -544,21 +661,33 @@ const makeWholeTable = (table) =>{
                     <Modal.Title>강의담기</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form.Select aria-label = "Default select example">
+                    <Form.Select aria-label = "Default select example" onChange={changeSelected}>
                         <option>단과대를 선택하세요</option>
-                        <option value="kyoyang">교양</option>
+                        <option value="egc">교양</option>
                            <option value="">공과대학</option>
                     </Form.Select>
                     <br />
-                    <Form.Select aria-label = "Default select example" id="major">
+                    <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
                         <option>학과를 선택하세요</option>
-                        <option value="cse">컴퓨터공학과</option>
-                        <option value="dee">전자전기공학과</option>
+                        <option value="civ">건설환경공학과</option>
+                        <option value="ard">건축공학전공</option>
+                        <option value="arc">건축학전공</option>
+                        <option value="mec">기계로봇에너지공학과</option>
+                        <option value="mme">멀티미디어공학과</option>
+                        <option value="ise">산업시스템공학과</option>
+                        <option value="eme">융합에너지신소재공학과</option>
+                        <option value="ene">전자전기공학부</option>
+                        <option value="inc">정보통신공학전공</option>
+                        <option value="cse">컴퓨터공학전공</option>
+                        <option value="cen">화공생물공학과</option>
+                        
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example"  id="lecture">
                         <option>강의를 선택하세요</option>
-                        {lectureRedner()}
+                        {inquiries.map(inquiry=>(
+                        <option value={inquiry.lectureCode}>{inquiry.lectureCode} / {inquiry.lname} / {inquiry.professor} / {inquiry.dayTime}</option>
+                        ))}
                     </Form.Select>
                 </Modal.Body>
                 <Modal.Footer>
@@ -586,6 +715,7 @@ const makeWholeTable = (table) =>{
                     </Button>
                 </Modal.Footer>
             </Modal>
+            
         </div>
     </>
     )
