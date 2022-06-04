@@ -20,11 +20,13 @@ function Navigation(){
                     <NavDropdown.Item><MenuItem to={'/scheduleGuide'}>시간표 가이드</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/emptyGuide'}>공강 가이드</MenuItem></NavDropdown.Item>
                 </NavDropdown>
+                {/*
                 <NavDropdown title="공과대학" id="college">
                     <NavDropdown.Item>학업이수 가이드</NavDropdown.Item>
                     <NavDropdown.Item>스케줄 가이드</NavDropdown.Item>
                     <NavDropdown.Item>공강 가이드</NavDropdown.Item>
                 </NavDropdown>
+                */}
                 <NavDropdown title="학과" id="major">
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/civ'}>건설환경공학과</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/ard'}>건축공학전공</MenuItem></NavDropdown.Item>
