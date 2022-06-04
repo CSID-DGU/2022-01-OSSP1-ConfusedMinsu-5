@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import Navigation from './components/nav';
 import Header from './components/header';
+import GraduateGuide_MAIN from './components/graduateGuide_main';
 import GraduateGuide_CSE from './components/graduateGuide_cse';
 import GraduateGuide_ENE from './components/graduateGuide_ene';
 import GraduateGuide_ISE from './components/graduateGuide_ise';
@@ -19,6 +20,7 @@ import Main from './components/main';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import  from 'jquery'
 import './App.css';
+import GraduateGuide_Main from "./components/graduateGuide_main";
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
             <Header/>
             <Routes>
               <Route path="/" element={<Main/>}></Route>
+              <Route path="/graduateGuide_main"
+                     element={<GraduateGuide_MAIN/>}></Route>
               <Route path="/api/graduateGuide/cse"
                      element={<GraduateGuide_CSE/>}></Route>
               <Route path="/api/graduateGuide/ene"
