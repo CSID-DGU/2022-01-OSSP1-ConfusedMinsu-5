@@ -190,19 +190,29 @@ function GraduateGuide() {
             {isKyoyang && (
                 <div className="component" id="kyoyang_info">
                   <div className="p-3">
-                    <p className="h3">
-                      <b>교양</b>
-                    </p>
-                    <p>
-                      <b>기본소양 (9학점)</b>
-                    </p>
+                  <p>
+                    <h5><b>기본소양 (6학점)</b></h5>
+                    <b> &nbsp; &nbsp; &nbsp;  공학경제 필수</b>
+                  </p>
                     <ul>{basicKyoyangResult()}</ul>
                     <p>
-                      <b>공통교양 (14~16학점)</b>
+                      <h5><b>공통교양 (14~16학점)</b></h5>
                     </p>
                     <ul>{commonKyoyangResult()}</ul>
                     <p>
-                      <b>MSC</b>
+                      <h5> <b>MSC (30학점)</b></h5>
+                      <b> &nbsp; &nbsp; &#10004; 수학 필수</b> <br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 미적분학및연습1, 미적분학및연습2, 공학선형대수학<br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 과학 선택필수</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 동일 분야 실험1,2과목 중 실험1,2과목 모두 (2개 과목) 선택필수<br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 일반물리학및실험1, 일반물리학및실험2 <br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 일반화학및실험1, 일반화학및실험2 <br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 일반생물학및실험1, 일반생물학및실험2 <br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 전산학 1개 과목 선택필수</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 프로그래밍기초와실습, 데이터프로그래밍기초와실습, 인공지능프로그래밍기초와실습<br/>
+
                     </p>
                     <ul>{mscKyoyangResult()}</ul>
                   </div>
@@ -211,10 +221,13 @@ function GraduateGuide() {
             {isMajor && (
                 <div className="component" id="major_info">
                   <div className="p-3">
-                    <p className="h3">
-                      <b>전공</b>
+                    <p className="h5">
+                      <b>전공필수</b>
                     </p>
                     <ul>{needMajorResult()}</ul>
+                    <p className="h5">
+                      <b>전공선택</b>
+                    </p>
                     <ul>{normalMajorResult()}</ul>
                   </div>
                 </div>
@@ -226,7 +239,8 @@ function GraduateGuide() {
                       <b>졸업요건</b>
                     </p>
 
-                    <ul>{gradResult()}</ul>
+                    <ul>{gradResult()}
+                      필수 영어 강의: 4개 과목 (전공 2개 과목 이상)</ul>
                   </div>
                 </div>
             )}
