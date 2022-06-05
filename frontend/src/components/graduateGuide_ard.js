@@ -6,7 +6,7 @@ import $ from "jquery";
 import {render} from "@testing-library/react";
 import Axios from "axios";
 
-function GraduateGuide_ARD() {
+function GraduateGuide() {
     const [kyoyang, setKyoyang] = useState("");
 
     const [major, setMajor] = useState("");
@@ -247,4 +247,4 @@ function GraduateGuide_ARD() {
     );
 }
 
-export default GraduateGuide_ARD;
+export default GraduateGuide;
