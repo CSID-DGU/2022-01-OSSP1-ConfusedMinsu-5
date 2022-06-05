@@ -156,9 +156,7 @@ function GraduateGuide() {
     const sGroupResult = () => {
         const result = [];
         for (let i = 0; i < sGroup.length; i++) {
-            result.push(<li key={i}><h5>이름 : <b>{sGroup[i].gname}</b></h5></li>);
-            result.push(<li key={i}>건물 : {sGroup[i].bname}</li>);
-            result.push(<li key={i}>위치 : {sGroup[i].laddr}</li>);
+            result.push(<li key={i}><h5>🐘 <b>{sGroup[i].gname}</b></h5></li>);
             result.push(<br/>);
 
         }
