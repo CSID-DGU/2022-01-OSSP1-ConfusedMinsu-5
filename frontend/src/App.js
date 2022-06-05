@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import Navigation from './components/nav';
 import Header from './components/header';
-import GraduateGuide_MAIN from './components/graduateGuide_main';
+import GraduateGuide_Main from "./components/graduateGuide_main";
 import GraduateGuide_CSE from './components/graduateGuide_cse';
 import GraduateGuide_ENE from './components/graduateGuide_ene';
 import GraduateGuide_ISE from './components/graduateGuide_ise';
@@ -10,6 +10,10 @@ import GraduateGuide_EME from './components/graduateGuide_eme';
 import GraduateGuide_INC from './components/graduateGuide_inc';
 import GraduateGuide_CEN from './components/graduateGuide_cen';
 import GraduateGuide_ARC from './components/graduateGuide_arc';
+import GraduateGuide_ARD from "./components/graduateGuide_ard";
+import GraduateGuide_CIV from "./components/graduateGuide_civ";
+import GraduateGuide_MEC from "./components/graduateGuide_mec";
+import GraduateGuide_MME from "./components/graduateGuide_mme";
 import ScheduleGuide from './components/scheduleGuide';
 import EmptyGuide from './components/emptyGuide';
 import Navigation_other from './components/nav_other';
@@ -20,12 +24,6 @@ import Main from './components/main';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import  from 'jquery'
 import './App.css';
-import GraduateGuide_Main from "./components/graduateGuide_main";
-import GraduateGuide_ard from "./components/graduateGuide_ard";
-import GraduateGuide_ARD from "./components/graduateGuide_ard";
-import GraduateGuide_CIV from "./components/graduateGuide_civ";
-import GraduateGuide_MEC from "./components/graduateGuide_mec";
-import GraduateGuide_MME from "./components/graduateGuide_mme";
 
 function App() {
 

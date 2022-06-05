@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import graduateGuideImage from './img/말라비틀어진대학일기.jpg'
+import scheduleGuideImage from "./img/종강이라구요.jpg";
+import emptyGuideImage from "./img/꽃밭코끼리.jpg"
 
 function Main() {
 
@@ -21,7 +24,7 @@ function Main() {
             <br/>
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://mblogthumb-phinf.pstatic.net/MjAxOTEwMTFfNjEg/MDAxNTcwNzg1ODM3Nzc0.zxDXm20VlPdQv8GQi9LWOdPwkqoBdiEmf8aBTWTsPF8g.FqMQTiF6ufydkQxrLBgET3kNYAyyKGJTWTyi1qd1-_Ag.PNG.kkson50/sample_images_01.png?type=w800"/>
+                        src={graduateGuideImage}/>
               <Card.Body>
                 <Card.Title>학업이수 가이드</Card.Title>
                 <Card.Text>
@@ -33,7 +36,7 @@ function Main() {
             </Card>
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://mblogthumb-phinf.pstatic.net/MjAxOTEwMTFfNjEg/MDAxNTcwNzg1ODM3Nzc0.zxDXm20VlPdQv8GQi9LWOdPwkqoBdiEmf8aBTWTsPF8g.FqMQTiF6ufydkQxrLBgET3kNYAyyKGJTWTyi1qd1-_Ag.PNG.kkson50/sample_images_01.png?type=w800"/>
+                        src={scheduleGuideImage}/>
               <Card.Body>
                 <Card.Title>시간표 가이드</Card.Title>
                 <Card.Text>
@@ -45,7 +48,7 @@ function Main() {
             </Card>
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://mblogthumb-phinf.pstatic.net/MjAxOTEwMTFfNjEg/MDAxNTcwNzg1ODM3Nzc0.zxDXm20VlPdQv8GQi9LWOdPwkqoBdiEmf8aBTWTsPF8g.FqMQTiF6ufydkQxrLBgET3kNYAyyKGJTWTyi1qd1-_Ag.PNG.kkson50/sample_images_01.png?type=w800"/>
+                        src={emptyGuideImage}/>
               <Card.Body>
                 <Card.Title>공강 가이드</Card.Title>
                 <Card.Text>
