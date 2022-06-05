@@ -10,7 +10,8 @@ const arr = [];
 
 let index = 0;
 
-    
+
+
 
 
 
@@ -97,7 +98,7 @@ function createLecture(){
     //console.log(property);
   }
   
-  
+
 
 function ScheduleGuide(){
 const [array , setArray] = useState([]);
@@ -151,8 +152,6 @@ const handleShow6 = () => setShow6(true);
             }
     });
 },[]);
-
-
 
 
     const lectureRedner = () => {
@@ -410,8 +409,9 @@ const makeWholeTable = (table,title) =>{
 
     return(
     <>
+
         <div className="ScheduleGuide d-flex justify-content-center">
-            
+
             <div className="tableBox" >
                 
                             <div className="d-flex ">
@@ -451,8 +451,14 @@ const makeWholeTable = (table,title) =>{
                                 </div>
                             </div>
                         </div>
+
+
+
             <div className="d-flex mb-5" >
                 <div className="container justify-content-center ">
+
+                <div> tip><br/> 과목을 1개 이상 담아주시면 <br/>각 그룹에서 1개씩 꺼내서 모든 경우의 수를 조합해본 후 <br/>만들어질 수 있는 시간표를 알려드릴게요. </div>
+
                     <div className="schedule_list p-4 m-3 g1" >
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 1</h5>
@@ -473,7 +479,7 @@ const makeWholeTable = (table,title) =>{
                             <a className="col-md-2"id="add"  onClick={handleShow1}>추가</a>
 
                             
-                            <a className="col-md-2" id="del" href="#">삭제</a>
+
                         </div>
                         <hr></hr>
                         <div id="lectureG2">
@@ -484,7 +490,7 @@ const makeWholeTable = (table,title) =>{
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 3</h5>
                             <a className="col-md-2"id="add"  onClick={handleShow2}>추가</a>
-                            <a className="col-md-2" id="del" href="#">삭제</a>
+
                         </div>
                         <hr></hr>
                         <div id="lectureG3">
@@ -495,7 +501,7 @@ const makeWholeTable = (table,title) =>{
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 4</h5>
                             <a className="col-md-2"id="add" onClick={handleShow3}>추가</a>
-                            <a className="col-md-2" id="del" href="#">삭제</a>
+
                         </div>
                         <hr></hr>
                         <div id="lectureG4">
@@ -506,7 +512,7 @@ const makeWholeTable = (table,title) =>{
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 5</h5>
                             <a className="col-md-2"id="add" onClick={handleShow4}>추가</a>
-                            <a className="col-md-2" id="del" href="#">삭제</a>
+
                         </div>
                         <hr></hr>
                         <div id="lectureG5">
@@ -517,13 +523,13 @@ const makeWholeTable = (table,title) =>{
                         <div className="d-flex">
                             <h5 className="col-md-8">그룹 6</h5>
                             <a className="col-md-2"id="add"onClick={handleShow5}>추가</a>
-                            <a className="col-md-2" id="del" href="#">삭제</a>
+
                         </div>
                         <hr></hr>
                         <div id="lectureG6">
                             <p>시간표를 담아주세요.</p>    
                         </div>
-                    </div>
+                    </div>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="button" className='btn btn-primary' value="make" onClick={()=>{
                     Axios(
                         {
@@ -543,14 +549,26 @@ const makeWholeTable = (table,title) =>{
                         console.log(error.response);
                     });
                     }}></input>
-                    
-                    
-                    
-                    
+
+                    &nbsp;&nbsp;
+                   <input type="button" className='btn btn-primary' value="clear" onClick={()=>{
+
+                                           window.location.reload();
+
+
+                                       }}></input>
+
+
+
+
                 </div>
-                
-            </div>
-                    
+           </div>
+
+
+
+
+
+
             <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-venter" centered>
                 <Modal.Header closeButton>
                     <Modal.Title>강의담기</Modal.Title>
@@ -827,6 +845,7 @@ const makeWholeTable = (table,title) =>{
             </Modal>
             
         </div>
+
     </>
     )
 }
