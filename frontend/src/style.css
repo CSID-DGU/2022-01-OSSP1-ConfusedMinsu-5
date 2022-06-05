@@ -47,15 +47,6 @@
     position :absolute;
 }
 
-<<<<<<< Updated upstream
-.twoHalfBox{
-
-    height:250px;
-    width:100%;
-    position :absolute;
-}
-
-
 
 .twoHalfBox{
 
@@ -64,20 +55,6 @@
     position :absolute;
 }
 
-.threeBox{
-    height:300px;
-    width:100%;
-    position :absolute;
-}
-.threeHalfBox{
-    height:350px;
-    width:100%;
-    position :absolute;
-}
-
-.fourBox{
-    height:400px;
-=======
 .tabs{
     top:-45px;
     position: relative;
