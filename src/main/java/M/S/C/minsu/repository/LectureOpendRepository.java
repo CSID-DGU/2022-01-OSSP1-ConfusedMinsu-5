@@ -51,6 +51,10 @@ public class LectureOpendRepository {
 
         return jdbcTemplate.query(query, lectureOpendMapper);
     }
+//    @PostMapping("/scheduleGuide/scheduleTable")
+//    public String[][][] getAllDataLectureOpend2(){
+//        return result;
+//    }
 
     @PostMapping("/scheduleGuide/scheduleTable")
     public List<LectureOpendDTO> getAllDataLectureOpend1(){
@@ -271,7 +275,10 @@ public class LectureOpendRepository {
 
         for (int k = 0; k < d.length; k += 2) {
             d[k] /= 5;
+            System.out.println(d[k]);
             d[k + 1] /= 5;
+            d[k+1]+=1.0;
+            System.out.println(d[k+1]);
 
             for (double l = d[k]; l < d[k + 1]; l++) {
                 if (k == 0) {
@@ -673,10 +680,12 @@ public class LectureOpendRepository {
         for (int k = 0; k < d1.length; k += 2) {
             d1[k] /= 5;
             d1[k + 1] /= 5;
+            d1[k+1]+=1.0;
             System.out.println(d1[k] + "" + d1[k+1]);
         }for (int k = 0; k < d2.length; k += 2) {
             d2[k] /= 5;
             d2[k + 1] /= 5;
+            d2[k+1]+=1.0;
             System.out.println(d2[k] + "" + d2[k+1]);
         }
 
