@@ -74,7 +74,7 @@ public class LectureRoomRepository {
                     String[] timeArr = str3.split("-");
                     double firstTime = Double.parseDouble(timeArr[0]);
                     double secondTime = Double.parseDouble(timeArr[1]);
-                    if (firstTime <= thisTime && thisTime <= secondTime) { //해당 요일에서 해당 시간이 사이에 있으면
+                    if (firstTime <= thisTime && thisTime <= secondTime+0.5) { //해당 요일에서 해당 시간이 사이에 있으면
                         exceptList.add(myLlist.get(findIndex.get(k)));
                     }
                 }
@@ -85,7 +85,7 @@ public class LectureRoomRepository {
                 String[] timeArr = str5.split("-");
                 double firstTime = Double.parseDouble(timeArr[0]);
                 double secondTime = Double.parseDouble(timeArr[1]);
-                if (firstTime <= thisTime && thisTime <= secondTime) { //해당 요일에서 해당 시간이 사이에 있으면
+                if (firstTime <= thisTime && thisTime <= secondTime+0.5) { //해당 요일에서 해당 시간이 사이에 있으면
                     exceptList.add(Llist.get(i));
                 }
             }
@@ -153,7 +153,7 @@ public class LectureRoomRepository {
                     String[] timeArr = str3.split("-");
                     double firstTime = Double.parseDouble(timeArr[0]);
                     double secondTime = Double.parseDouble(timeArr[1]);
-                    if (firstTime <= thisTime && thisTime <= secondTime) { //해당 요일에서 해당 시간이 사이에 있으면
+                    if (firstTime <= thisTime && thisTime <= secondTime+0.5) { //해당 요일에서 해당 시간이 사이에 있으면
                         exceptList.add(myLlist.get(findIndex.get(k)));
                     }
                 }
@@ -164,7 +164,7 @@ public class LectureRoomRepository {
                 String[] timeArr = str5.split("-");
                 double firstTime = Double.parseDouble(timeArr[0]);
                 double secondTime = Double.parseDouble(timeArr[1]);
-                if (firstTime <= thisTime && thisTime <= secondTime) { //해당 요일에서 해당 시간이 사이에 있으면
+                if (firstTime <= thisTime && thisTime <= secondTime+0.5) { //해당 요일에서 해당 시간이 사이에 있으면
                     exceptList.add(Llist.get(i));
                 }
             }

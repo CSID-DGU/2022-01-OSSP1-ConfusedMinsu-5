@@ -21,6 +21,11 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import  from 'jquery'
 import './App.css';
 import GraduateGuide_Main from "./components/graduateGuide_main";
+import GraduateGuide_ard from "./components/graduateGuide_ard";
+import GraduateGuide_ARD from "./components/graduateGuide_ard";
+import GraduateGuide_CIV from "./components/graduateGuide_civ";
+import GraduateGuide_MEC from "./components/graduateGuide_mec";
+import GraduateGuide_MME from "./components/graduateGuide_mme";
 
 function App() {
 
@@ -33,7 +38,15 @@ function App() {
             <Routes>
               <Route path="/" element={<Main/>}></Route>
               <Route path="/graduateGuide_main"
-                     element={<GraduateGuide_MAIN/>}></Route>
+                     element={<GraduateGuide_Main/>}></Route>
+              <Route path="/api/graduateGuide/ard"
+                     element={<GraduateGuide_ARD/>}></Route>
+              <Route path="/api/graduateGuide/civ"
+                     element={<GraduateGuide_CIV/>}></Route>
+              <Route path="/api/graduateGuide/mec"
+                     element={<GraduateGuide_MEC/>}></Route>
+              <Route path="/api/graduateGuide/mme"
+                     element={<GraduateGuide_MME/>}></Route>
               <Route path="/api/graduateGuide/cse"
                      element={<GraduateGuide_CSE/>}></Route>
               <Route path="/api/graduateGuide/ene"

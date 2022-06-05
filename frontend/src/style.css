@@ -16,22 +16,54 @@
     background-color: rgb(253, 178, 38);
 }
 
+.oneBox{
+    
+    height:100px;
+    width:100%;
+    position :absolute;
+}
+
+.oneHalfBox{
+
+    height:150px;
+    width:100%;
+    position :absolute;
+}
 .twoBox{
     height:200px;
     width:100%;
     position :absolute;
 }
 
-.oneHalfBox{
-    
-    height:150px;
+.twoHalfBox{
+
+    height:250px;
     width:100%;
     position :absolute;
 }
 
-.oneBox{
-    
-    height:100px;
+
+
+.twoHalfBox{
+
+    height:250px;
+    width:100%;
+    position :absolute;
+}
+
+.threeBox{
+    height:300px;
+    width:100%;
+    position :absolute;
+}
+.threeHalfBox{
+    height:350px;
+    width:100%;
+    position :absolute;
+}
+
+.fourBox{
+    height:400px;
     width:100%;
     position :absolute;
 }
