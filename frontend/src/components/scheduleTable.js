@@ -54,8 +54,16 @@ function makeTable(table){
         else if(startTime == '17.5') inner_box.setAttribute('class','seventeenHalf');
         else if(startTime == '18.0') inner_box.setAttribute('class','eighteen');
 
-        if(boxSize == 1.5) inner_box.className+=' oneHalfBox';
-        else if(boxSize == 2.0) inner_box.className+=' twoBox';
+
+        if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
+        else if(boxSize == 1.5) inner_box.className+=' twoBox';
+        else if(boxSize == 0.5) inner_box.className+=' oneBox';
+        else if(boxSize==2.0) inner_box.className+=' twoHalfBox';
+        else if(boxSize == 2.5) inner_box.className+=' threeBox'
+        else if(boxSize == 3.5) inner_box.className+=' fourBox';
+        else if(boxSize==3.0) inner_box.className+=' threeHalfBox';
+        else if(boxSize == 4.0) inner_box.className+=' fourHalfBox';
+        else if(boxSize==4.5) inner_box.className+=" fiveBox";
 
         inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
       

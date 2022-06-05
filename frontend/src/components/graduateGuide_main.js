@@ -3,7 +3,7 @@ import {Card, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Main from "./main";
 
-function GraduateGuide_Main() {
+function GraduateGuide_MAIN() {
   return (
       <div className="row justify-content-center">
         <div className="main">
@@ -136,4 +136,4 @@ function GraduateGuide_Main() {
   );
 }
 
-export default GraduateGuide_Main;
+export default GraduateGuide_MAIN;
