@@ -190,19 +190,29 @@ function GraduateGuide() {
                     {isKyoyang && (
                         <div className="component" id="kyoyang_info">
                             <div className="p-3">
-                                <p className="h3">
-                                    <b>교양</b>
-                                </p>
                                 <p>
-                                    <b>기본소양 (9학점)</b>
+                                    <h5><b>기본소양 (6학점)</b></h5>
                                 </p>
                                 <ul>{basicKyoyangResult()}</ul>
                                 <p>
-                                    <b>공통교양 (14~16학점)</b>
+                                    <h5><b>공통교양 (14~16학점)</b></h5>
                                 </p>
                                 <ul>{commonKyoyangResult()}</ul>
                                 <p>
-                                    <b>MSC</b>
+                                    <h5> <b>MSC (30학점)</b></h5>
+                                    <b> &nbsp; &nbsp; &#10004; 수학 필수 </b> <br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 미적분학및연습1, 미적분학및연습2, 공학선형대수학<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 2015~2020: 공학수학1 또는 산업수학 / 2021~2022: 산업수학<br/><br/>
+                                    <b> &nbsp; &nbsp; &#10004; 수학 권장 </b> <br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 수치해석및실습, 확률및통계학<br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 2021~2022: 공학수학1<br/>
+                                    <br/>
+
+                                    <b>&nbsp; &nbsp; &#10004; 과학 필수</b><br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 일반물리학및실험1, 일반물리학및실험2<br/><br/>
+
+                                    <b>&nbsp; &nbsp; &#10004; 전산학 필수</b><br/>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; 2018~2022: 프로그래밍기초와실습
                                 </p>
                                 <ul>{mscKyoyangResult()}</ul>
                             </div>
@@ -211,10 +221,13 @@ function GraduateGuide() {
                     {isMajor && (
                         <div className="component" id="major_info">
                             <div className="p-3">
-                                <p className="h3">
-                                    <b>전공</b>
+                                <p className="h5">
+                                    <b>전공필수</b>
                                 </p>
                                 <ul>{needMajorResult()}</ul>
+                                <p className="h5">
+                                    <b>전공선택</b>
+                                </p>
                                 <ul>{normalMajorResult()}</ul>
                             </div>
                         </div>
@@ -226,7 +239,8 @@ function GraduateGuide() {
                                     <b>졸업요건</b>
                                 </p>
 
-                                <ul>{gradResult()}</ul>
+                                <ul>{gradResult()}
+                                    필수 영어 강의: 4개 과목 (전공 2개 과목 이상)</ul>
                             </div>
                         </div>
                     )}

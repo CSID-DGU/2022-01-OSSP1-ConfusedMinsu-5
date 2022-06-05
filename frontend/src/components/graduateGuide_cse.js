@@ -190,19 +190,25 @@ function GraduateGuide() {
             {isKyoyang && (
                 <div className="component" id="kyoyang_info">
                   <div className="p-3">
-                    <p className="h3">
-                      <b>교양</b>
-                    </p>
                     <p>
-                      <b>기본소양 (9학점)</b>
+                      <h5> <b>기본소양 (9학점)</b></h5>
                     </p>
                     <ul>{basicKyoyangResult()}</ul>
                     <p>
-                      <b>공통교양 (14~16학점)</b>
+                      <h5><b>공통교양 (14~16학점)</b></h5>
                     </p>
                     <ul>{commonKyoyangResult()}</ul>
                     <p>
-                      <b>MSC</b>
+                      <h5> <b>MSC (21학점)</b></h5>
+                      <b> &nbsp; &nbsp; &#10004; 수학 필수</b> <br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 미적분학및연습1, 확률및통계학  <br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 과학 필수</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 공학선형대수학 <br/><br/>
+                      <b>&nbsp; &nbsp; &#10004; 과학 1개 과목 선택 필수</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 과학영역 ‘실험’교과목 1개 과목 <br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 전산학 영역 불인정</b><br/>
                     </p>
                     <ul>{mscKyoyangResult()}</ul>
                   </div>
@@ -211,10 +217,13 @@ function GraduateGuide() {
             {isMajor && (
                 <div className="component" id="major_info">
                   <div className="p-3">
-                    <p className="h3">
-                      <b>전공</b>
+                    <p className="h5">
+                      <b>전공필수</b>
                     </p>
                     <ul>{needMajorResult()}</ul>
+                    <p className="h5">
+                      <b>전공선택</b>
+                    </p>
                     <ul>{normalMajorResult()}</ul>
                   </div>
                 </div>
@@ -223,10 +232,12 @@ function GraduateGuide() {
                 <div className="component" id="graduate_info">
                   <div className="p-3">
                     <p className="h3">
-                      <b>졸업요건</b>
+                      <b>졸업요건
+                        </b>
                     </p>
 
-                    <ul>{gradResult()}</ul>
+                    <ul>{gradResult()}
+                      필수 영어 강의: 4개 과목 (전공 2개 과목 이상)</ul>
                   </div>
                 </div>
             )}

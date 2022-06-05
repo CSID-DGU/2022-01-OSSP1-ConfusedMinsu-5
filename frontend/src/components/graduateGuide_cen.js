@@ -190,19 +190,26 @@ function GraduateGuide() {
             {isKyoyang && (
                 <div className="component" id="kyoyang_info">
                   <div className="p-3">
-                    <p className="h3">
-                      <b>교양</b>
-                    </p>
                     <p>
-                      <b>기본소양 (9학점)</b>
+                      <h5> <b>기본소양 (6학점)</b></h5>
                     </p>
                     <ul>{basicKyoyangResult()}</ul>
                     <p>
-                      <b>공통교양 (14~16학점)</b>
+                      <h5><b>공통교양 (14~16학점)</b></h5>
                     </p>
                     <ul>{commonKyoyangResult()}</ul>
                     <p>
-                      <b>MSC</b>
+                      <h5> <b>MSC(9~11학점)</b></h5>
+                      <b> &nbsp; &nbsp; &#10004; 수학 필수</b> <br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp;  미적분학및연습1, 미적분학및연습2, 공학수학1<br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 과학 필수 (화학개론 불인정)</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 일반화학및실험1, 일반화학및실험2 <br/><br/>
+                      <b>&nbsp; &nbsp; &#10004; 과학 선택 필수 </b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 화학개론 제외 과학 영역 <br/><br/>
+
+                      <b>&nbsp; &nbsp; &#10004; 전산학 1개 과목 선택 필수</b><br/>
+                      &nbsp; &nbsp; &nbsp; &nbsp; 전산학 영역
                     </p>
                     <ul>{mscKyoyangResult()}</ul>
                   </div>
@@ -212,9 +219,11 @@ function GraduateGuide() {
                 <div className="component" id="major_info">
                   <div className="p-3">
                     <p className="h3">
-                      <b>전공</b>
+                      <h5><b> 전공필수</b> </h5>
                     </p>
                     <ul>{needMajorResult()}</ul>
+
+                    <h5><b> 전공선택</b> </h5>
                     <ul>{normalMajorResult()}</ul>
                   </div>
                 </div>
@@ -226,7 +235,8 @@ function GraduateGuide() {
                       <b>졸업요건</b>
                     </p>
 
-                    <ul>{gradResult()}</ul>
+                    <ul>{gradResult()}
+                      필수 영어 강의: 4개 과목 (전공 2개 과목 이상)</ul>
                   </div>
                 </div>
             )}

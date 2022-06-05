@@ -182,3 +182,19 @@
 .lecture5{
     background-color: lightpink;
 }
+
+table {
+    width: 50%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+th, td {
+    border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+}
+
+th:first-child, td:first-child {
+    border-left: none;
+}
