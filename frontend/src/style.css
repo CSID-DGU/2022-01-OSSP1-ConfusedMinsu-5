@@ -23,6 +23,18 @@
     position :absolute;
 }
 
+.threeBox{
+    height:300px;
+    width:100%;
+    position :absolute;
+}
+
+.fourBox{
+    height:400px;
+    width:100%;
+    position :absolute;
+}
+
 .oneHalfBox{
 
     height:150px;
@@ -35,6 +47,7 @@
     position :absolute;
 }
 
+<<<<<<< Updated upstream
 .twoHalfBox{
 
     height:250px;
@@ -64,6 +77,16 @@
 
 .fourBox{
     height:400px;
+=======
+.tabs{
+    top:-45px;
+    position: relative;
+}
+
+.oneBox{
+    
+    height:100px;
+>>>>>>> Stashed changes
     width:100%;
     position :absolute;
 }
@@ -111,6 +134,11 @@
 .ten{
     top:200px;
 }
+
+.tenHalf{
+    top:250px;
+}
+
 .eleven{
     top:300px;
 }
@@ -155,26 +183,26 @@
     top:1000px;
 }
 
-.lecture1{
+.lecture0{
     background-color: lightblue;
 }
 
-.lecture2{
+.lecture1{
     background-color: lightcoral;
 }
 
-.lecture3{
+.lecture2{
     background-color: lightgoldenrodyellow;
 }
 
-.lecture4{
+.lecture3{
     background-color: lightgreen;
 }
 
-.lecture5{
+.lecture4{
     background-color: lightskyblue;
 }
 
-.lecture6{
+.lecture5{
     background-color: lightpink;
 }

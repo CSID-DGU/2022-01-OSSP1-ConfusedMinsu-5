@@ -181,23 +181,35 @@ const handleShow6 = () => setShow6(true);
   const makeTable = (table) =>{
     var result = "";
     var title="";
+    var titleArr=[""];
+    var resultArr=[""];
     for(let i = 0;i<table.length;i++){
-        for(let j=0;j<table[i].length;j++){
-            title+=table[i][j][3];
+        titleArr[i]="";//배열 초기화
+        resultArr[i]="";
+        for(let j=0;j<table[0].length;j++){
+            title+=table[0][j][3];
             title+=','
-            if(table[i][j][2].indexOf(',')!=-1){
-                title+=table[i][j][3];
-                title+=','
+            titleArr[i]+=table[i][j][3];
+            titleArr[i]+=',';
+            if(table[0][j][2].indexOf(',')!=-1){
+                title+=table[0][j][3];
+                title+=',';
+                titleArr[i]+=table[i][j][3];
+                titleArr[i]+=',';
             };
-            result+=table[i][j][2];
+            result+=table[0][j][2];
             result+=','
+            resultArr[i]+=table[i][j][2];
+            resultArr[i]+=',';
         }
     }
     var tableDiv = document.querySelector(".tableBox");
     tableDiv.style.display='block';
-    console.log(result);
-    console.log(title);
-    makeWholeTable(result,title);    
+    // console.log(titleArr);
+    // console.log(resultArr);
+    // console.log(result);
+    // console.log(title);
+    makeWholeTable(resultArr,titleArr);    
 }
 
 const makeWholeTable = (table,title) =>{
@@ -211,54 +223,124 @@ const makeWholeTable = (table,title) =>{
     var finishTime;
     var date;
 
+    
+
     var temp;
     console.log(time)
-    timeArr = time.split(',');
-    titleArr = titleSet.split(',');
-    for(let i = 0;i<timeArr.length;i++){;
-        day = timeArr[i].substr(0,1);
-        temp = timeArr[i].split('-');
-        startTime = temp[0].substr(1,);
-        finishTime = temp[1];
+    for(let i = 0; i<time.length;i++){
+        timeArr[i] = time[i].split(',');
+        titleArr[i] = titleSet[i].split(',');
+    }
+    console.log(timeArr);
+    console.log(titleArr);
+    
+    for(let i = 0;i<timeArr.length;i++){
+        const tabs = document.querySelector('.tabs');
+        const inner_tab = document.createElement('div');    
+        inner_tab.onclick = function() {tableShow(i);}
+        inner_tab.setAttribute('class', i+ ' btn btn-warning');
+        inner_tab.innerHTML=i+1;
+        tabs.appendChild(inner_tab);
 
-        boxSize = finishTime- startTime;
+        for(let j = 0;j<timeArr[i].length;j++){
+            day = timeArr[i][j].substr(0,1);
+            temp = timeArr[i][j].split('-');
+            startTime = temp[0].substr(1,);
+            finishTime = temp[1];
+
+            boxSize = finishTime- startTime;
+
+            console.log(temp);
+            console.log(boxSize);
+
+            if(day == '월') date = document.querySelector('.mon');
+            else if(day == '화') date = document.querySelector('.tue');
+            else if(day == '수') date = document.querySelector('.wed');
+            else if(day == '목') date = document.querySelector('.thr');
+            else if(day == '금') date = document.querySelector('.fri');
+            const inner_box = document.createElement('div');
+            
+
+            if(startTime == '0.0') inner_box.setAttribute('class','eight');
+            else if(startTime == '0.5') inner_box.setAttribute('class','eightHalf');
+            else if(startTime == '1.0') inner_box.setAttribute('class','nine');
+            else if(startTime == '1.5') inner_box.setAttribute('class','nineHalf');
+            else if(startTime == '2.0') inner_box.setAttribute('class','ten');
+            else if(startTime == '2.5') inner_box.setAttribute('class','tenHalf');
+            else if(startTime == '3.0') inner_box.setAttribute('class','eleven');
+            else if(startTime == '3.5') inner_box.setAttribute('class','elevenHalf');
+            else if(startTime == '4.0') inner_box.setAttribute('class','twelve');
+            else if(startTime == '4.5') inner_box.setAttribute('class','twelveHalf');
+            else if(startTime == '5.0') inner_box.setAttribute('class','thirteen');
+            else if(startTime == '5.5') inner_box.setAttribute('class','thirteenHalf');
+            else if(startTime == '6.0') inner_box.setAttribute('class','fourteen');
+            else if(startTime == '6.5') inner_box.setAttribute('class','fourteenHalf');
+            else if(startTime == '7.0') inner_box.setAttribute('class','fifteen');
+            else if(startTime == '7.5') inner_box.setAttribute('class','fifteenHalf');
+            else if(startTime == '8.0') inner_box.setAttribute('class','sixteen');
+            else if(startTime == '8.5') inner_box.setAttribute('class','sixteenHalf');
+            else if(startTime == '9.0') inner_box.setAttribute('class','seventeen');
+            else if(startTime == '9.5') inner_box.setAttribute('class','seventeenHalf');
+            else if(startTime == '10.0') inner_box.setAttribute('class','eighteen');
+
+            if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
+            else if(boxSize == 1.5) inner_box.className+=' twoBox';
+            else if(boxSize == 0.5) inner_box.className+=' oneBox';
+            else if(boxSize == 2.5) inner_box.className+=' threeBox'
+            else if(boxSize == 3.5) inner_box.className+=' fourBox';
+
+            inner_box.className+=' table'+i;
+
+            inner_box.className+=' lecture'+ i;
         
-        if(day == '월') date = document.querySelector('.mon');
-        else if(day == '화') date = document.querySelector('.tue');
-        else if(day == '수') date = document.querySelector('.wed');
-        else if(day == '목') date = document.querySelector('.thr');
-        else if(day == '금') date = document.querySelector('.fri');
-        const inner_box = document.createElement('div');
-        if(startTime == '0.0') inner_box.setAttribute('class','eight');
-        else if(startTime == '0.5') inner_box.setAttribute('class','eightHalf');
-        else if(startTime == '1.0') inner_box.setAttribute('class','nine');
-        else if(startTime == '1.5') inner_box.setAttribute('class','nineHalf');
-        else if(startTime == '2.0') inner_box.setAttribute('class','ten');
-        else if(startTime == '2.5') inner_box.setAttribute('class','tenHalf');
-        else if(startTime == '3.0') inner_box.setAttribute('class','eleven');
-        else if(startTime == '3.5') inner_box.setAttribute('class','elevenHalf');
-        else if(startTime == '4.0') inner_box.setAttribute('class','twelve');
-        else if(startTime == '4.5') inner_box.setAttribute('class','twelveHalf');
-        else if(startTime == '5.0') inner_box.setAttribute('class','thirteen');
-        else if(startTime == '5.5') inner_box.setAttribute('class','thirteenHalf');
-        else if(startTime == '6.0') inner_box.setAttribute('class','fourteen');
-        else if(startTime == '6.5') inner_box.setAttribute('class','fourteenHalf');
-        else if(startTime == '7.0') inner_box.setAttribute('class','fifteen');
-        else if(startTime == '7.5') inner_box.setAttribute('class','fifteenHalf');
-        else if(startTime == '8.0') inner_box.setAttribute('class','sixteen');
-        else if(startTime == '8.5') inner_box.setAttribute('class','sixteenHalf');
-        else if(startTime == '9.0') inner_box.setAttribute('class','seventeen');
-        else if(startTime == '9.5') inner_box.setAttribute('class','seventeenHalf');
-        else if(startTime == '10.0') inner_box.setAttribute('class','eighteen');
+            inner_box.innerHTML+=titleArr[i][j];
+            date.appendChild(inner_box);
+        }
+        // day = timeArr[i].substr(0,1);
+        // temp = timeArr[i].split('-');
+        // startTime = temp[0].substr(1,);
+        // finishTime = temp[1];
 
-        if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
-        else if(boxSize == 1.5) inner_box.className+=' twoBox';
-        else if(boxSize == 0.5) inner_box.className+=' oneBox';
+        // boxSize = finishTime- startTime;
+        
+        // if(day == '월') date = document.querySelector('.mon');
+        // else if(day == '화') date = document.querySelector('.tue');
+        // else if(day == '수') date = document.querySelector('.wed');
+        // else if(day == '목') date = document.querySelector('.thr');
+        // else if(day == '금') date = document.querySelector('.fri');
+        // const inner_box = document.createElement('div');
+        // if(startTime == '0.0') inner_box.setAttribute('class','eight');
+        // else if(startTime == '0.5') inner_box.setAttribute('class','eightHalf');
+        // else if(startTime == '1.0') inner_box.setAttribute('class','nine');
+        // else if(startTime == '1.5') inner_box.setAttribute('class','nineHalf');
+        // else if(startTime == '2.0') inner_box.setAttribute('class','ten');
+        // else if(startTime == '2.5') inner_box.setAttribute('class','tenHalf');
+        // else if(startTime == '3.0') inner_box.setAttribute('class','eleven');
+        // else if(startTime == '3.5') inner_box.setAttribute('class','elevenHalf');
+        // else if(startTime == '4.0') inner_box.setAttribute('class','twelve');
+        // else if(startTime == '4.5') inner_box.setAttribute('class','twelveHalf');
+        // else if(startTime == '5.0') inner_box.setAttribute('class','thirteen');
+        // else if(startTime == '5.5') inner_box.setAttribute('class','thirteenHalf');
+        // else if(startTime == '6.0') inner_box.setAttribute('class','fourteen');
+        // else if(startTime == '6.5') inner_box.setAttribute('class','fourteenHalf');
+        // else if(startTime == '7.0') inner_box.setAttribute('class','fifteen');
+        // else if(startTime == '7.5') inner_box.setAttribute('class','fifteenHalf');
+        // else if(startTime == '8.0') inner_box.setAttribute('class','sixteen');
+        // else if(startTime == '8.5') inner_box.setAttribute('class','sixteenHalf');
+        // else if(startTime == '9.0') inner_box.setAttribute('class','seventeen');
+        // else if(startTime == '9.5') inner_box.setAttribute('class','seventeenHalf');
+        // else if(startTime == '10.0') inner_box.setAttribute('class','eighteen');
 
-        inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
+        // if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
+        // else if(boxSize == 1.5) inner_box.className+=' twoBox';
+        // else if(boxSize == 0.5) inner_box.className+=' oneBox';
+        // else if(boxSize == 2.5) inner_box.className+=' threeBox'
+        // else if(boxSize == 3.5) inner_box.className+=' fourBox';
+
+        // inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
       
-        inner_box.innerHTML+=titleArr[i];
-        date.appendChild(inner_box);
+        // inner_box.innerHTML+=titleArr[i];
+        // date.appendChild(inner_box);
      
     }
 }
@@ -302,16 +384,44 @@ const makeWholeTable = (table,title) =>{
 
     })
 
+    const tableShow =(a)=>{
+        
+        var tab = document.querySelector('.tabs');
+        var tabs = document.querySelector('.tabs').childNodes;
+        var table;
+        console.log(tabs); 
+        tab.style.display='';
+        for(let i = 0;i<tabs.length;i++){
+            table = document.querySelectorAll('.table'+i);
+            console.log(table);
+            if(i == a){
+                console.log('if');
+                for(let j = 0;j<table.length;j++)
+                    table[j].style.display=''; 
+            }
+            else{
+                console.log('else');
+                console.log(a);
+                for(let j = 0;j<table.length;j++)
+                    table[j].style.display='none';   
+            }
+        }
+    };
+
     return(
     <>
         <div className="ScheduleGuide d-flex justify-content-center">
-            <div>
-                {arrRender()}
-            </div>
+            
             <div className="tableBox" >
+                
                             <div className="d-flex ">
-                                
+                                <div className='tabs'>
+                                    
+                                    
+                                </div>  
+                            
                                 <div className="day mon">
+                                
                                     <div className='title text-center'>월</div>
                                     <div className='timeBox nine'>9시</div>
                                     <div className='timeBox ten'>10시</div>
@@ -428,7 +538,7 @@ const makeWholeTable = (table,title) =>{
                         console.log(response.data);
                         
                         setTimeout(makeTable(response.data),3000);
-                        
+                        tableShow(0);
                     }).catch(error=>{
                         console.log(error.response);
                     });
