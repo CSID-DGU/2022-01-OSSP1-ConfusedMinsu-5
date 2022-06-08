@@ -13,9 +13,9 @@ function Main() {
           <div className="row justify-content-center">
             <Card className="bigCard m-3" style={{width: '58rem'}}>
               <Card.Body>
-                <Card.Title>학업이수 가이드</Card.Title>
+                <Card.Title>어서오세요 아기코끼리 여러분~!</Card.Title>
                 <Card.Text>
-                  학과 정보를 알고싶은 당신! 학과별 교양강의, 전공강의, 졸업요건, 소모임을 알고싶다구요? 여기에요!
+                  아코친구들의 충만한 학교생활을 위해 준비해보았어요~! 우리들의 가이드를 보고 즐거운 학교생활 해볼까요??
                 </Card.Text>
                 <Button variant="warning"><Link
                     to={'/graduateGuide_main'}>확인 하러가기</Link></Button>

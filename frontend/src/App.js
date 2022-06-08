@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import Navigation from './components/nav';
 import Header from './components/header';
@@ -25,8 +25,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //import  from 'jquery'
 import './App.css';
 
-function App() {
 
+
+function App() {
+       const [url, setUrl] = useState("");
+       
+       
   return (
       <div className="d-flex justify-content-center">
         <div className="App">
@@ -34,8 +38,9 @@ function App() {
           <BrowserRouter>
             <Header/>
             <Routes>
+        
               <Route path="/" element={<Main/>}></Route>
-              <Route path="/graduateGuide_main"
+              <Route path="/graduateGuide/main"
                      element={<GraduateGuide_Main/>}></Route>
               <Route path="/api/graduateGuide/ard"
                      element={<GraduateGuide_ARD/>}></Route>
