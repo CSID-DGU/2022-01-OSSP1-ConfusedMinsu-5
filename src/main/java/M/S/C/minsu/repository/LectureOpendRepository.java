@@ -275,33 +275,33 @@ public class LectureOpendRepository {
 
         for (int k = 0; k < d.length; k += 2) {
             d[k] /= 5;
-            System.out.println(d[k]);
+            System.out.println("start : " +d[k]);
             d[k + 1] /= 5;
-            d[k+1]+=1.0;
-            System.out.println(d[k+1]);
+            d[k+1]+=1;
+            System.out.println("endTime : " +d[k+1]);
 
             for (double l = d[k]; l < d[k + 1]; l++) {
                 if (k == 0) {
                     switch (day[0]) {
                         case "월":
                             if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
-                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-2)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면 & l==d[k] 처음한번만
                                     // 기존의 강의들과 시간, 캠퍼스 비교하기
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
                             }
-                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
+                            if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){ // 29면 30인덱스는 존재하지 않기 때문에
                                 if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
                                     // 기존의 강의들과 시간, 캠퍼스 비교하기
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
 
                                     }
@@ -317,7 +317,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -328,7 +328,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -342,7 +342,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -353,7 +353,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -367,7 +367,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -378,7 +378,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -392,7 +392,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -403,7 +403,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -417,7 +417,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -428,7 +428,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -451,7 +451,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -462,7 +462,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][0]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -476,7 +476,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -487,7 +487,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][1]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -501,7 +501,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -512,7 +512,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][2]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -526,7 +526,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -537,7 +537,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][3]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -551,7 +551,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -562,7 +562,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][4]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -576,7 +576,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -587,7 +587,7 @@ public class LectureOpendRepository {
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
                                         isPossible= compareTime(result[noodle][j] , result[noodle][a]);
-                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
+//                                        resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][5]+=5;
                                         if(!isPossible) resultLec[noodle][0][0]=-1;
                                     }
                                 }
@@ -596,7 +596,7 @@ public class LectureOpendRepository {
                             break;
                     }
                     for (int n = 0; n < 6; n++) {
-                        if (resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][n] >=2) {
+                        if (resultLec[noodle][Integer.parseInt(String.valueOf(Math.round(l)))][n] >1) {
                             resultLec[noodle][0][0] = -1; // 첫번째 값이 -1이면 그 시간표는 버린다는 FLAG
                         }
                     }
@@ -657,7 +657,7 @@ public class LectureOpendRepository {
         for(int i=0;i<2;i++){ arr1[i][0]=0; arr1[i][1]=0; }
         boolean b=true;
         // 1. 겹치는 요일을 찾는다. 2. 겹치는 요일의 시간을 확인한다.
-        for(int i=0;i<day1.length;i++){ // 요일이 하나도 안겹치면, false 해당 강의와는 연강이 아님.
+        for(int i=0;i<day1.length;i++){ // 요일이 겹치면, false
             for(int j=0;j<day2.length;j++){
                 if(day1[i].equals(day2[j])){
                     b=false;
@@ -666,7 +666,7 @@ public class LectureOpendRepository {
             }
         }
         System.out.println(b);
-        if(b) return b; // 요일이 하나도 안겹치면 바로 return true;
+        if(b) return b; // 요일이 하나도 안겹치면 바로 return true
         //여기까지 정상작동 확인
         for(int i=0;i<sp1.length;i+=2) {
             String s = sp1[i] + sp1[i + 1];
@@ -675,7 +675,6 @@ public class LectureOpendRepository {
         for(int i=0;i<sp2.length;i+=2){
             String s=sp2[i]+sp2[i+1];
             d2[i/2]=Double.parseDouble(s);
-
         }
         for (int k = 0; k < d1.length; k += 2) {
             d1[k] /= 5;
@@ -700,27 +699,40 @@ public class LectureOpendRepository {
             return true;
         }
         str1=s1[5].substring(0,3); str2=s2[5].substring(0,3);
+        System.out.println("check : "+str1 +"\t"+ str2);
         b=true;
-        for(int i=0;i<arr1[0].length;i++){
-            for(int j=0;j<d1.length/2;j++){
-                for(int k=0;k<d2.length/2;k++){
-                    if(arr1[0][i]==1){
-                        if(d1[j] == d2[k]){
-                            for(int l=0;l< availableBuild.length;l++){
-                                if(str1.equals(availableBuild[l][0])){
-                                    for(int n=0;n< availableBuild[l].length;n++){
-                                        if(str2.equals(availableBuild[l][n])){
-                                            b=false;
-                                        }
-                                    }
-                                }
-                            }
-                        }
+        for(int l=0;l< availableBuild.length;l++){
+            if(str1.equals(availableBuild[l][0])){
+                for(int k=0;k< availableBuild[l].length;k++){
+                    if(str2.equals(availableBuild[l][k])){
+                        b=false;
                     }
                 }
+                l=availableBuild.length;
             }
+
         }
-        return b;
+//        for(int i=0;i<arr1[0].length;i++){
+//            for(int j=0;j<d1.length/2;j++){
+//                for(int k=0;k<d2.length/2;k++){
+//                    if(arr1[0][i]==1){
+//                        if(d1[j] == d2[k]){
+//                            for(int l=0;l< availableBuild.length;l++){
+//                                if(str1.equals(availableBuild[l][0])){
+//                                    for(int n=0;n< availableBuild[l].length;n++){
+//                                        if(str2.equals(availableBuild[l][n])){
+//                                            b=false;
+//                                        }
+//                                    }
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }false
+        System.out.println(b); // 연강가능 건물 -> 펄스  연강 불가능하면 트루!
+        return !b;
     }
 
 
