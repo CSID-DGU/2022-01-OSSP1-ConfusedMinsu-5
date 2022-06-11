@@ -277,7 +277,7 @@ public class LectureOpendRepository {
             d[k] /= 5;
             System.out.println(d[k]);
             d[k + 1] /= 5;
-            d[k+1]+=1.0;
+//            d[k+1]+=1.0;
             System.out.println(d[k+1]);
 
             for (double l = d[k]; l < d[k + 1]; l++) {
