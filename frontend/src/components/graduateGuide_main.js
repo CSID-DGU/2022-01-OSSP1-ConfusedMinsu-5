@@ -2,6 +2,16 @@ import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Main from "./main";
+import civImage from './img/건설환경공학과.jpg'
+import arc_ardImage from "./img/건축공학과.jpg"
+import mecImage from "./img/기계공학과.jpg"
+import mmeImage from "./img/멀티미디어공학과.jpg"
+import iseImage from "./img/산업시스템공학과.jpg"
+import emeImage from "./img/융합에너지신소재공학과.jpg"
+import eneImage from "./img/전자전기공학과.jpg"
+import incImage from "./img/정보통신공학과.jpg"
+import cseImage from "./img/컴퓨터공학과.jpg"
+import cenImage from "./img/화공생물공학과.jpg"
 
 function GraduateGuide_MAIN() {
   return (
@@ -17,7 +27,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={civImage} ></Card.Img>
               <Card.Body>
                 <Card.Title>건설환경공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -27,7 +37,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={arc_ardImage}/>
               <Card.Body>
                 <Card.Title>건축공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -37,7 +47,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={arc_ardImage}/>
               <Card.Body>
                 <Card.Title>건축학과</Card.Title>
                 <Button variant="warning"><Link
@@ -49,7 +59,7 @@ function GraduateGuide_MAIN() {
           <div className="row justify-content-center">
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={mecImage}/>
               <Card.Body>
                 <Card.Title>기계로봇에너지공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -59,7 +69,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={mmeImage}/>
               <Card.Body>
                 <Card.Title>멀티미디어공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -69,7 +79,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={iseImage}/>
               <Card.Body>
                 <Card.Title>산업시스템공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -81,7 +91,7 @@ function GraduateGuide_MAIN() {
           <div className="row justify-content-center">
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={emeImage}/>
               <Card.Body>
                 <Card.Title>융합에너지신소재공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -91,7 +101,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={eneImage}/>
               <Card.Body>
                 <Card.Title>전자전기공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -101,7 +111,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={incImage}/>
               <Card.Body>
                 <Card.Title>정보통신공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -113,7 +123,7 @@ function GraduateGuide_MAIN() {
           <div className="row justify-content-center">
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={cseImage}/>
               <Card.Body>
                 <Card.Title>컴퓨터공학과</Card.Title>
                 <Button variant="warning"><Link
@@ -123,7 +133,7 @@ function GraduateGuide_MAIN() {
 
             <Card className="m-3" style={{width: '18rem'}}>
               <Card.Img variant="top"
-                        src="https://media.istockphoto.com/vectors/robotic-industry-line-outline-icon-vector-id1316420932?k=20&m=1316420932&s=612x612&w=0&h=hTxm0W0HQ-fSH5g21WFUvyWZuatsPTf52k8wwIuPDUc="/>
+                        src={cenImage}/>
               <Card.Body>
                 <Card.Title>화공생물공학과</Card.Title>
                 <Button variant="warning"><Link

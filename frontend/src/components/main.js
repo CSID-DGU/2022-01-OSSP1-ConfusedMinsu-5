@@ -31,7 +31,7 @@ function Main() {
                   학과 정보를 알고싶은 당신! 학과별 교양강의, 전공강의, 졸업요건, 소모임을 알고싶다구요? 여기에요!
                 </Card.Text>
                 <Button variant="warning"><Link
-                    to={'/graduateGuide_main'}>확인 하러가기</Link></Button>
+                    to={'/graduateGuide/main'}>확인 하러가기</Link></Button>
               </Card.Body>
             </Card>
             <Card className="m-3" style={{width: '18rem'}}>

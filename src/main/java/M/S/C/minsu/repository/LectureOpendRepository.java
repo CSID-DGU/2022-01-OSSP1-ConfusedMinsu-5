@@ -204,7 +204,7 @@ public class LectureOpendRepository {
 
         for(int k=0;k<avg;k++){
             if(resultLec[k][0][0] == -1) {
-               for(int a=0;a<flag;a++){
+                for(int a=0;a<flag;a++){
                     result[k][a]= new String[]{",", ",", ",", ",", ",", ","};
                 }
             }
@@ -277,20 +277,17 @@ public class LectureOpendRepository {
             d[k] /= 5;
             System.out.println("start : " +d[k]);
             d[k + 1] /= 5;
-<<<<<<< HEAD
 //            d[k+1]+=1.0;
             System.out.println(d[k+1]);
-=======
             d[k+1]+=1;
             System.out.println("endTime : " +d[k+1]);
->>>>>>> 6191263f465766797892ccf90194eec329a48649
 
             for (double l = d[k]; l < d[k + 1]; l++) {
                 if (k == 0) {
                     switch (day[0]) {
                         case "월":
                             if( Integer.parseInt(String.valueOf(Math.round(l))) != 0 ){ // 0이면, -1인덱스는 존재하지 않기때문에
-                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-2)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면 & l==d[k] 처음한번만
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))-1)][0] > 0) && l == d[k]){ // 위 인덱스 값이 있다면! 즉 연강이라면 & l==d[k] 처음한번만
                                     // 기존의 강의들과 시간, 캠퍼스 비교하기
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
@@ -328,7 +325,7 @@ public class LectureOpendRepository {
                                 }
                             }
                             if(Integer.parseInt(String.valueOf(Math.round(l))) != 29){
-                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][0] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
+                                if( (resultLec[noodle][(Integer.parseInt(String.valueOf(Math.round(l)))+1)][1] > 0) && l == (d[k+1])-1 ){ // 위 인덱스 값이 있다면! 즉 연강이라면
                                     // 기존의 강의들과 시간, 캠퍼스 비교하기
                                     for(int a=0;a<j;a++){
                                         boolean isPossible = true;
