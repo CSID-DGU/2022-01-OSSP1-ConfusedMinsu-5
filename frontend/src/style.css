@@ -107,6 +107,10 @@
     top:100px;
 }
 
+.nineHalf{
+    top:150px;
+}
+
 .ten{
     top:200px;
 }
@@ -127,6 +131,10 @@
     top:400px;
 }
 
+.twelveHalf{
+    top:450px;
+}
+
 .thirteen{
     top:500px;
 }
@@ -139,12 +147,24 @@
     top:600px;
 }
 
+.fourteenHalf{
+    top:650px;
+}
+
 .fifteen{
     top:700px;
 }
 
+.fifteenHalf{
+    top:750px;
+}
+
 .sixteen{
     top:800px;
+}
+
+.sixteenHalf{
+    top:850px;
 }
 
 .seventeen{

@@ -182,23 +182,33 @@ const handleShow6 = () => setShow6(true);
     var title="";
     var titleArr=[""];
     var resultArr=[""];
+
+    var minusTable = [""];
+    var minusIndex = 0;
     for(let i = 0;i<table.length;i++){
+        if(table[i][0][0] != ","){
+            minusTable[minusIndex] =table[i];
+            minusIndex++;
+        }
+    }
+    console.log(minusTable);
+    for(let i = 0;i<minusTable.length;i++){
         titleArr[i]="";//배열 초기화
         resultArr[i]="";
-        for(let j=0;j<table[0].length;j++){
-            title+=table[0][j][3];
+        for(let j=0;j<minusTable[0].length;j++){
+            title+=minusTable[0][j][3];
             title+=','
-            titleArr[i]+=table[i][j][3];
+            titleArr[i]+=minusTable[i][j][3];
             titleArr[i]+=',';
-            if(table[0][j][2].indexOf(',')!=-1){
-                title+=table[0][j][3];
+            if(minusTable[0][j][2].indexOf(',')!=-1){
+                title+=minusTable[0][j][3];
                 title+=',';
-                titleArr[i]+=table[i][j][3];
+                titleArr[i]+=minusTable[i][j][3];
                 titleArr[i]+=',';
             };
-            result+=table[0][j][2];
+            result+=minusTable[0][j][2];
             result+=','
-            resultArr[i]+=table[i][j][2];
+            resultArr[i]+=minusTable[i][j][2];
             resultArr[i]+=',';
         }
     }
@@ -234,14 +244,18 @@ const makeWholeTable = (table,title) =>{
     console.log(titleArr);
     
     for(let i = 0;i<timeArr.length;i++){
-        const tabs = document.querySelector('.tabs');
+        if(timeArr[i][0] !=""){
+            const tabs = document.querySelector('.tabs');
         const inner_tab = document.createElement('div');    
         inner_tab.onclick = function() {tableShow(i);}
         inner_tab.setAttribute('class', i+ ' btn btn-warning');
         inner_tab.innerHTML=i+1;
         tabs.appendChild(inner_tab);
+        }
+        
 
         for(let j = 0;j<timeArr[i].length;j++){
+            if(timeArr[i][0] != ""){
             day = timeArr[i][j].substr(0,1);
             temp = timeArr[i][j].split('-');
             startTime = temp[0].substr(1,);
@@ -257,6 +271,7 @@ const makeWholeTable = (table,title) =>{
             else if(day == '수') date = document.querySelector('.wed');
             else if(day == '목') date = document.querySelector('.thr');
             else if(day == '금') date = document.querySelector('.fri');
+            
             const inner_box = document.createElement('div');
             
 
@@ -294,6 +309,7 @@ const makeWholeTable = (table,title) =>{
         
             inner_box.innerHTML+=titleArr[i][j];
             date.appendChild(inner_box);
+            }
         }
         // day = timeArr[i].substr(0,1);
         // temp = timeArr[i].split('-');

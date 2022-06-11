@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 
 const MenuItem = ({active, children, to})=>(
 
@@ -11,12 +12,29 @@ const MenuItem = ({active, children, to})=>(
     </Link>
 )
 
+// function isGraduate(element){
+//     if(element.name )
+// }
+
 function Navigation(){
+    const [isG , setIsG] = useState();
+
+    const isGraduate =()=>{
+        if((window.location.href.substr(22,).split('/')[0] == 'graduateGuide' || window.location.href.substr(22,).split('/')[1] == 'graduateGuide')) setIsG(true);
+        else setIsG(false);
+    }
+
+    useEffect(()=>{
+
+    },[isG])
+
     return(
+        
         <div className="Navigation">
-            <Nav className="p-1 mb-5" variant ="pills" activekey="1">
-                <NavDropdown title="가이드 선택" id="guide">
-                    <NavDropdown.Item><MenuItem to={'graduateGuide_main'}>학업이수 가이드</MenuItem></NavDropdown.Item>
+            {isGraduate}
+            <Nav className="p-1 mb-5" variant ="pills" activekey="1" onClick={()=>{isGraduate();}}>
+                <NavDropdown title="가이드 선택" id="guide" >
+                    <NavDropdown.Item><MenuItem to={'graduateGuide/main'}>학업이수 가이드</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/scheduleGuide'}>시간표 가이드</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/emptyGuide'}>공강 가이드</MenuItem></NavDropdown.Item>
                 </NavDropdown>
@@ -27,7 +45,9 @@ function Navigation(){
                     <NavDropdown.Item>공강 가이드</NavDropdown.Item>
                 </NavDropdown>
                 */}
-                <NavDropdown title="학과" id="major">
+                {isG &&
+                    (
+                    <NavDropdown title="학과" id="major" >
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/civ'}>건설환경공학과</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/ard'}>건축공학전공</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/arc'}>건축학전공</MenuItem></NavDropdown.Item>
@@ -39,8 +59,11 @@ function Navigation(){
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/inc'}>정보통신공학전공</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/cse'}>컴퓨터공학전공</MenuItem></NavDropdown.Item>
                     <NavDropdown.Item><MenuItem to={'/api/graduateGuide/cen'}>화공생물공학과</MenuItem></NavDropdown.Item>
-                </NavDropdown>
+                    </NavDropdown>)
+                }
+                
             </Nav>  
+            
         </div>
     )
 }
