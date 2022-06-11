@@ -204,7 +204,7 @@ public class LectureOpendRepository {
 
         for(int k=0;k<avg;k++){
             if(resultLec[k][0][0] == -1) {
-               for(int a=0;a<flag;a++){
+                for(int a=0;a<flag;a++){
                     result[k][a]= new String[]{",", ",", ",", ",", ",", ","};
                 }
             }

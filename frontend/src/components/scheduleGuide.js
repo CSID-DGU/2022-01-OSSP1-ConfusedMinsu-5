@@ -396,6 +396,12 @@ const makeWholeTable = (table,title) =>{
         else if(selected === "egc" && data.lectureCode.substr(0,3)==="EGC"){
             return data;
         }
+        else if(selected === "rgc" && data.lectureCode.substr(0,3)==="RGC"){
+            return data;
+        }
+        else if(selected === "pri" && data.lectureCode.substr(0,3)==="PRI"){
+            return data;
+        }
 
     })
 
@@ -591,9 +597,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
-                        <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option>전공인지 교양인지 선택하세요</option>
+                        <option value="egc">일반교양</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
@@ -634,9 +642,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
+                        <option>전공인지 교양인지 선택하세요</option>
                         <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
@@ -677,9 +687,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
+                        <option>전공인지 교양인지 선택하세요</option>
                         <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
@@ -720,9 +732,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
+                        <option>전공인지 교양인지 선택하세요</option>
                         <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
@@ -763,9 +777,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
+                        <option>전공인지 교양인지 선택하세요</option>
                         <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
@@ -806,9 +822,11 @@ const makeWholeTable = (table,title) =>{
                 </Modal.Header>
                 <Modal.Body>
                     <Form.Select aria-label = "Default select example" onChange={changeSelected}>
-                        <option>단과대를 선택하세요</option>
+                        <option>전공인지 교양인지 선택하세요</option>
                         <option value="egc">교양</option>
-                           <option value="">공과대학</option>
+                        <option value="pri">MSC(BSM)</option>
+                        <option value="rgc">공통교양</option>
+                           <option value="">전공(공과대학)</option>
                     </Form.Select>
                     <br />
                     <Form.Select aria-label = "Default select example" id="major" name="major" onChange={changeSelected}>
