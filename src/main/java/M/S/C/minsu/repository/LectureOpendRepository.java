@@ -277,8 +277,13 @@ public class LectureOpendRepository {
             d[k] /= 5;
             System.out.println("start : " +d[k]);
             d[k + 1] /= 5;
+<<<<<<< HEAD
+//            d[k+1]+=1.0;
+            System.out.println(d[k+1]);
+=======
             d[k+1]+=1;
             System.out.println("endTime : " +d[k+1]);
+>>>>>>> 6191263f465766797892ccf90194eec329a48649
 
             for (double l = d[k]; l < d[k + 1]; l++) {
                 if (k == 0) {
