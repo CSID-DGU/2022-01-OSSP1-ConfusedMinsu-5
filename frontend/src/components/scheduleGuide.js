@@ -182,6 +182,8 @@ const handleShow6 = () => setShow6(true);
     var title="";
     var titleArr=[""];
     var resultArr=[""];
+    var colorArr=[""]
+    var colorIndex = 0;
 
     var minusTable = [""];
     var minusIndex = 0;
@@ -195,37 +197,46 @@ const handleShow6 = () => setShow6(true);
     for(let i = 0;i<minusTable.length;i++){
         titleArr[i]="";//배열 초기화
         resultArr[i]="";
+        colorArr[i]="";
         for(let j=0;j<minusTable[0].length;j++){
             title+=minusTable[0][j][3];
             title+=','
             titleArr[i]+=minusTable[i][j][3];
             titleArr[i]+=',';
+            colorArr[i]+= colorIndex;
+            colorArr[i]+=',';
             if(minusTable[0][j][2].indexOf(',')!=-1){
                 title+=minusTable[0][j][3];
                 title+=',';
                 titleArr[i]+=minusTable[i][j][3];
                 titleArr[i]+=',';
+                colorArr[i]+= colorIndex;
+                colorArr[i]+=',';
             };
             result+=minusTable[0][j][2];
             result+=','
             resultArr[i]+=minusTable[i][j][2];
             resultArr[i]+=',';
+            colorIndex++;
         }
+        colorIndex=0;
     }
     var tableDiv = document.querySelector(".tableBox");
     tableDiv.style.display='block';
     // console.log(titleArr);
     // console.log(resultArr);
     // console.log(result);
-    // console.log(title);
-    makeWholeTable(resultArr,titleArr);    
+     console.log(colorArr);
+    
+    makeWholeTable(resultArr,titleArr,colorArr);    
 }
 
-const makeWholeTable = (table,title) =>{
+const makeWholeTable = (table,title,color) =>{
     const time = table;
     const titleSet = title;
     var timeArr = [];
     var titleArr = [];
+    var colorArr=[];
     var day;
     var boxSize;
     var startTime;
@@ -233,12 +244,13 @@ const makeWholeTable = (table,title) =>{
     var date;
 
     
-
+    colorArr = color;
     var temp;
     console.log(time)
     for(let i = 0; i<time.length;i++){
         timeArr[i] = time[i].split(',');
         titleArr[i] = titleSet[i].split(',');
+        colorArr[i] = color[i].split(',');
     }
     console.log(timeArr);
     console.log(titleArr);
@@ -305,7 +317,7 @@ const makeWholeTable = (table,title) =>{
 
             inner_box.className+=' table'+i;
 
-            inner_box.className+=' lecture'+ i;
+            inner_box.className+=' lecture'+ colorArr[i][j];
         
             inner_box.innerHTML+=titleArr[i][j];
             date.appendChild(inner_box);

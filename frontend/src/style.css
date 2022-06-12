@@ -55,10 +55,27 @@
     position :absolute;
 }
 
+
+
 .tabs{
     top:-45px;
     position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap:nowrap;
+    overflow-x: auto;
+    
 }
+
+.tabs .btn{
+    margin-right:5px;
+    flex: 0 0 auto;
+}
+
+.tabs::-webkit-scrollbar{
+    display: none;
+  }
+  
 
 .oneBox{
     
@@ -69,9 +86,10 @@
 
 .timeBox{
     width:520%;
-    left:-30px;
+    left:-35px;
     position :absolute;
     border-top:1px solid rgba(0, 0, 0, 0.322);
+    z-index: -1;
 }
 .mon{
  left:0%;   
@@ -103,8 +121,13 @@
     height:100%;
 }
 
+.eight{
+    z-index: -1;
+}
+
 .nine{
     top:100px;
+    
 }
 
 .nineHalf{
