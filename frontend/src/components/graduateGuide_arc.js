@@ -15,7 +15,7 @@ function GraduateGuide() {
 
   const [sGroup, setSGroup] = useState("");
 
-  const [isKyoyang, setIsKyoyang] = useState();
+  const [isKyoyang, setIsKyoyang] = useState(true);
 
   const [isMajor, setIsMajor] = useState();
 
