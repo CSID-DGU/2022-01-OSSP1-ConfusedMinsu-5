@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Card, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import graduateGuideImage from './img/말라비틀어진대학일기.jpg'
-import scheduleGuideImage from "./img/종강이라구요.jpg";
-import emptyGuideImage from "./img/꽃밭코끼리.jpg"
+import graduateGuideImage from './img/열공아코.png'
+import scheduleGuideImage from "./img/학교걷는아코.png";
+import emptyGuideImage from "./img/핸드폰쥔아코.png"
 
 function Main() {
 
