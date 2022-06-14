@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import graduateGuideImage from './img/열공아코.png'
 import scheduleGuideImage from "./img/학교걷는아코.png";
 import emptyGuideImage from "./img/핸드폰쥔아코.png"
+import ukiki from './img/우끼끼.png';
 
 function Main() {
 
@@ -12,6 +13,8 @@ function Main() {
         <div className=" main">
           <div className="row justify-content-center">
             <Card className="bigCard m-3" style={{width: '58rem'}}>
+              
+              
               <Card.Body>
                 <Card.Title>어서오세요 아기코끼리 여러분~!</Card.Title>
                 <Card.Text>
