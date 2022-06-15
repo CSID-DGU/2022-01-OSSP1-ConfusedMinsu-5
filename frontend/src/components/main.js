@@ -20,8 +20,7 @@ function Main() {
                 <Card.Text>
                   아코친구들의 충만한 학교생활을 위해 준비해보았어요~! 우리들의 가이드를 보고 즐거운 학교생활 해볼까요??
                 </Card.Text>
-                <Button variant="warning"><Link
-                    to={'/graduateGuide_main'}>확인 하러가기</Link></Button>
+                <Button variant="warning" onClick={()=> window.open('http://www.dongguk.edu/main','_blank')}>확인 하러가기</Button>
               </Card.Body>
             </Card>
             <br/>
