@@ -9,9 +9,9 @@
 | 2020112377 | 김민수 | back-end  |
 
 
-# 실행
-Spring Boot 실행 안하고 react 실행 시 Proxy error 발생  
-React 종료 할 때는 terminal에 ctrl + c 입력
+# 실행방법
+
+## git clone -> Springboot 실행 -> React 실행
 
 ## 1. Springboot 실행
 ```
