@@ -158,7 +158,6 @@ function GraduateGuide() {
     for (let i = 0; i < sGroup.length; i++) {
       result.push(<li key={i}><h5>🐘 <b>{sGroup[i].gname}</b></h5></li>);
       result.push(<br/>);
-
     }
     return result;
   };

@@ -10,8 +10,8 @@ import ukiki from './img/우끼끼.png';
 function Header(){
     return(
         <div className="row mb-5">
-            <div className="Header  text-center  col-md-2">
-                <Link className="title"to={'/'}><h5 className="mt-2"><img src={ukiki} style={{width:`${80}px`}} ></img>우끼끼</h5></Link> 
+            <div className="Header  text-center  col-md-2 p-1">
+                <Link className="title"to={'/'}><h3 className="mt-2"><img src={ukiki} style={{width:`${80}px`}} ></img>우끼끼</h3></Link> 
             </div>
             <div className="nav col-md-10">
                 <Navigation />

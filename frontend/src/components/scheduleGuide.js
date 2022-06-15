@@ -184,6 +184,7 @@ const handleShow6 = () => setShow6(true);
     var resultArr=[""];
     var colorArr=[""]
     var colorIndex = 0;
+    var roomArr=[""];
 
     var minusTable = [""];
     var minusIndex = 0;
@@ -198,6 +199,7 @@ const handleShow6 = () => setShow6(true);
         titleArr[i]="";//배열 초기화
         resultArr[i]="";
         colorArr[i]="";
+        roomArr[i] ="";
         for(let j=0;j<minusTable[0].length;j++){
             title+=minusTable[0][j][3];
             title+=','
@@ -205,6 +207,8 @@ const handleShow6 = () => setShow6(true);
             titleArr[i]+=',';
             colorArr[i]+= colorIndex;
             colorArr[i]+=',';
+            roomArr[i]+=minusTable[i][j][5];
+            roomArr[i]+=',';
             if(minusTable[0][j][2].indexOf(',')!=-1){
                 title+=minusTable[0][j][3];
                 title+=',';
@@ -228,15 +232,16 @@ const handleShow6 = () => setShow6(true);
     // console.log(result);
      console.log(colorArr);
     
-    makeWholeTable(resultArr,titleArr,colorArr);    
+    makeWholeTable(resultArr,titleArr,colorArr, roomArr);    
 }
 
-const makeWholeTable = (table,title,color) =>{
+const makeWholeTable = (table,title,color, room) =>{
     const time = table;
     const titleSet = title;
     var timeArr = [];
     var titleArr = [];
     var colorArr=[];
+    var roomArr=[];
     var day;
     var boxSize;
     var startTime;
@@ -251,10 +256,11 @@ const makeWholeTable = (table,title,color) =>{
         timeArr[i] = time[i].split(',');
         titleArr[i] = titleSet[i].split(',');
         colorArr[i] = color[i].split(',');
+        roomArr[i] = room[i].split(',');
     }
     console.log(timeArr);
     console.log(titleArr);
-    
+    console.log(roomArr);
     for(let i = 0;i<timeArr.length;i++){
         if(timeArr[i][0] !=""){
             const tabs = document.querySelector('.tabs');
@@ -319,55 +325,13 @@ const makeWholeTable = (table,title,color) =>{
 
             inner_box.className+=' lecture'+ colorArr[i][j];
         
-            inner_box.innerHTML+=titleArr[i][j];
+            inner_box.innerHTML+=`<h5><b>`+titleArr[i][j]+`</b></h5>`;
+            //inner_box.innerHTML+=`</br>`;
+            inner_box.innerHTML+=roomArr[i][j];
             date.appendChild(inner_box);
             }
         }
-        // day = timeArr[i].substr(0,1);
-        // temp = timeArr[i].split('-');
-        // startTime = temp[0].substr(1,);
-        // finishTime = temp[1];
-
-        // boxSize = finishTime- startTime;
         
-        // if(day == '월') date = document.querySelector('.mon');
-        // else if(day == '화') date = document.querySelector('.tue');
-        // else if(day == '수') date = document.querySelector('.wed');
-        // else if(day == '목') date = document.querySelector('.thr');
-        // else if(day == '금') date = document.querySelector('.fri');
-        // const inner_box = document.createElement('div');
-        // if(startTime == '0.0') inner_box.setAttribute('class','eight');
-        // else if(startTime == '0.5') inner_box.setAttribute('class','eightHalf');
-        // else if(startTime == '1.0') inner_box.setAttribute('class','nine');
-        // else if(startTime == '1.5') inner_box.setAttribute('class','nineHalf');
-        // else if(startTime == '2.0') inner_box.setAttribute('class','ten');
-        // else if(startTime == '2.5') inner_box.setAttribute('class','tenHalf');
-        // else if(startTime == '3.0') inner_box.setAttribute('class','eleven');
-        // else if(startTime == '3.5') inner_box.setAttribute('class','elevenHalf');
-        // else if(startTime == '4.0') inner_box.setAttribute('class','twelve');
-        // else if(startTime == '4.5') inner_box.setAttribute('class','twelveHalf');
-        // else if(startTime == '5.0') inner_box.setAttribute('class','thirteen');
-        // else if(startTime == '5.5') inner_box.setAttribute('class','thirteenHalf');
-        // else if(startTime == '6.0') inner_box.setAttribute('class','fourteen');
-        // else if(startTime == '6.5') inner_box.setAttribute('class','fourteenHalf');
-        // else if(startTime == '7.0') inner_box.setAttribute('class','fifteen');
-        // else if(startTime == '7.5') inner_box.setAttribute('class','fifteenHalf');
-        // else if(startTime == '8.0') inner_box.setAttribute('class','sixteen');
-        // else if(startTime == '8.5') inner_box.setAttribute('class','sixteenHalf');
-        // else if(startTime == '9.0') inner_box.setAttribute('class','seventeen');
-        // else if(startTime == '9.5') inner_box.setAttribute('class','seventeenHalf');
-        // else if(startTime == '10.0') inner_box.setAttribute('class','eighteen');
-
-        // if(boxSize == 1.0) inner_box.className+=' oneHalfBox';
-        // else if(boxSize == 1.5) inner_box.className+=' twoBox';
-        // else if(boxSize == 0.5) inner_box.className+=' oneBox';
-        // else if(boxSize == 2.5) inner_box.className+=' threeBox'
-        // else if(boxSize == 3.5) inner_box.className+=' fourBox';
-
-        // inner_box.className+=' lecture'+ Math.floor(Math.random() * 6+1);
-      
-        // inner_box.innerHTML+=titleArr[i];
-        // date.appendChild(inner_box);
      
     }
 }

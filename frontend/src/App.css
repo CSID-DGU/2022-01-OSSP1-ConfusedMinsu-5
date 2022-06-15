@@ -116,6 +116,7 @@
 
 .Navigation #guide, #college, #major{
   color: black;
+  font-size:21px;
 }
 
 .Navigation .menu-item{
