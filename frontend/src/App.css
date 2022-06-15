@@ -114,7 +114,7 @@
   width:80%;
 }
 
-.Navigation #guide, #college, #major{
+.Navigation  #guide, #college, .Navigation #major{
   color: black;
   font-size:21px;
 }
