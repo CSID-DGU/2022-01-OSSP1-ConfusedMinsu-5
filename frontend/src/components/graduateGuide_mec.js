@@ -108,6 +108,17 @@ function GraduateGuide() {
         return result;
     };
 
+    const commmonSelect = () => {
+        const result = [];
+        for (let i = 0; i < kyoyang.length; i++) {
+            if (kyoyang[i].majorCategoryDetail == "공통교양(리더십 택 1)") {
+                result.push(<li key={i}>{kyoyang[i].lname}</li>);
+            }
+        }
+        return result;
+    };
+
+
     const mscKyoyangResult = () => {
         const result = [];
         for (let i = 0; i < kyoyang.length; i++) {
@@ -195,7 +206,12 @@ function GraduateGuide() {
                                 <p>
                                     <h5><b>공통교양 (14~16학점)</b></h5>
                                 </p>
+                                <b>&nbsp; &nbsp; &nbsp;&nbsp; S4면 BasicEAS 부터 들어야 함!</b>
                                 <ul>{commonKyoyangResult()}</ul>
+                                <p>
+                                    <b> &nbsp; &nbsp; &nbsp;&nbsp; 하나만 선택 </b><br/>
+                                    <ul>{commmonSelect()}</ul>
+                                </p>
                                 <p>
                                     <h5> <b>MSC (30학점)</b></h5>
                                     <b> &nbsp; &nbsp; &#10004; 수학 필수 </b> <br/>
